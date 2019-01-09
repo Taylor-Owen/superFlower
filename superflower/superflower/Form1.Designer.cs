@@ -40,11 +40,19 @@
             this.standingJumpHeight = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.stopTimerCheckbox = new System.Windows.Forms.CheckBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.startingCoins = new System.Windows.Forms.NumericUpDown();
+            this.startingLives = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.runningJumpHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.walkingJumpHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.standingJumpHeight)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.startingCoins)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.startingLives)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -178,13 +186,75 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.startingLives);
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.startingCoins);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.stopTimerCheckbox);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(327, 253);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "ASM Patches";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // stopTimerCheckbox
+            // 
+            this.stopTimerCheckbox.AutoSize = true;
+            this.stopTimerCheckbox.Location = new System.Drawing.Point(7, 7);
+            this.stopTimerCheckbox.Name = "stopTimerCheckbox";
+            this.stopTimerCheckbox.Size = new System.Drawing.Size(77, 17);
+            this.stopTimerCheckbox.TabIndex = 0;
+            this.stopTimerCheckbox.Text = "Stop Timer";
+            this.stopTimerCheckbox.UseVisualStyleBackColor = true;
+            this.stopTimerCheckbox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(7, 34);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(72, 13);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Starting Coins";
+            // 
+            // startingCoins
+            // 
+            this.startingCoins.Enabled = false;
+            this.startingCoins.Location = new System.Drawing.Point(86, 31);
+            this.startingCoins.Maximum = new decimal(new int[] {
+            99,
+            0,
+            0,
+            0});
+            this.startingCoins.Name = "startingCoins";
+            this.startingCoins.Size = new System.Drawing.Size(33, 20);
+            this.startingCoins.TabIndex = 2;
+            this.startingCoins.ValueChanged += new System.EventHandler(this.startingCoins_ValueChanged);
+            // 
+            // startingLives
+            // 
+            this.startingLives.Enabled = false;
+            this.startingLives.Location = new System.Drawing.Point(86, 57);
+            this.startingLives.Maximum = new decimal(new int[] {
+            9,
+            0,
+            0,
+            0});
+            this.startingLives.Name = "startingLives";
+            this.startingLives.Size = new System.Drawing.Size(33, 20);
+            this.startingLives.TabIndex = 4;
+            this.startingLives.ValueChanged += new System.EventHandler(this.startingLives_ValueChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 60);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(71, 13);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Starting Lives";
             // 
             // Form1
             // 
@@ -202,6 +272,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.runningJumpHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.walkingJumpHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.standingJumpHeight)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.startingCoins)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.startingLives)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -220,6 +294,11 @@
         private System.Windows.Forms.NumericUpDown standingJumpHeight;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.CheckBox stopTimerCheckbox;
+        private System.Windows.Forms.NumericUpDown startingCoins;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown startingLives;
+        private System.Windows.Forms.Label label6;
     }
 }
 

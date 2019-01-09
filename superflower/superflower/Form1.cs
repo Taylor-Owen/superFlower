@@ -92,6 +92,33 @@ namespace superflower
 
             runningJumpHeight.Value = workingRom.data[Constants.Offsets.runningJump];
             runningJumpHeight.Enabled = true;
+
+            startingCoins.Value = workingRom.data[Constants.Offsets.startingCoinsCount];
+            startingCoins.Enabled = true;
+
+            startingLives.Value = workingRom.data[Constants.Offsets.startingLivesCount]+1; //Game logic dictates that 0 = 1, 1 = 2.
+            startingLives.Enabled = true;
+
+            if (StopTimerApplied())
+                stopTimerCheckbox.Checked = true;
+            else
+                stopTimerCheckbox.Checked = false;
+
+            return true;
+        }
+
+        /*
+        * 
+        *  Check to see if the Stop Timer ASM has been applied
+        * 
+        */
+
+        private bool StopTimerApplied()
+        {
+            for (int i = 0; i < 3; i++)
+                if (workingRom.data[Constants.Offsets.timerDecreaseLogic + i] != 0xEA)
+                    return false;
+
             return true;
         }
 
@@ -109,6 +136,32 @@ namespace superflower
         {
 
             workingRom.data[Constants.Offsets.runningJump] = (byte)runningJumpHeight.Value;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (stopTimerCheckbox.Checked)
+            {
+                for (int i=0;i<3;i++)
+                    workingRom.data[Constants.Offsets.timerDecreaseLogic+i] = 0xEA;
+            }
+            else if (!stopTimerCheckbox.Checked)
+            {
+                //20 5F 8F
+                workingRom.data[Constants.Offsets.timerDecreaseLogic] = 0x20;
+                workingRom.data[Constants.Offsets.timerDecreaseLogic + 1] = 0x5F;
+                workingRom.data[Constants.Offsets.timerDecreaseLogic + 2] = 0x8F;
+            }
+        }
+
+        private void startingLives_ValueChanged(object sender, EventArgs e)
+        {
+            workingRom.data[Constants.Offsets.startingLivesCount] = (byte)(startingLives.Value - 1);
+        }
+
+        private void startingCoins_ValueChanged(object sender, EventArgs e)
+        {
+            workingRom.data[Constants.Offsets.startingCoinsCount] = (byte)startingCoins.Value;
         }
     }
 }
