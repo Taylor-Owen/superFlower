@@ -40,19 +40,23 @@
             this.standingJumpHeight = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.stopTimerCheckbox = new System.Windows.Forms.CheckBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.startingCoins = new System.Windows.Forms.NumericUpDown();
             this.startingLives = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
+            this.startingCoins = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.stopTimerCheckbox = new System.Windows.Forms.CheckBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.marioNameTextbox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.runningJumpHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.walkingJumpHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.standingJumpHeight)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.startingCoins)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.startingLives)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.startingCoins)).BeginInit();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -67,6 +71,7 @@
             // 
             // saveButton
             // 
+            this.saveButton.Enabled = false;
             this.saveButton.Location = new System.Drawing.Point(135, 13);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(123, 23);
@@ -79,6 +84,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(13, 43);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -199,40 +205,6 @@
             this.tabPage2.Text = "ASM Patches";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // stopTimerCheckbox
-            // 
-            this.stopTimerCheckbox.AutoSize = true;
-            this.stopTimerCheckbox.Location = new System.Drawing.Point(7, 7);
-            this.stopTimerCheckbox.Name = "stopTimerCheckbox";
-            this.stopTimerCheckbox.Size = new System.Drawing.Size(77, 17);
-            this.stopTimerCheckbox.TabIndex = 0;
-            this.stopTimerCheckbox.Text = "Stop Timer";
-            this.stopTimerCheckbox.UseVisualStyleBackColor = true;
-            this.stopTimerCheckbox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 34);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Starting Coins";
-            // 
-            // startingCoins
-            // 
-            this.startingCoins.Enabled = false;
-            this.startingCoins.Location = new System.Drawing.Point(86, 31);
-            this.startingCoins.Maximum = new decimal(new int[] {
-            99,
-            0,
-            0,
-            0});
-            this.startingCoins.Name = "startingCoins";
-            this.startingCoins.Size = new System.Drawing.Size(33, 20);
-            this.startingCoins.TabIndex = 2;
-            this.startingCoins.ValueChanged += new System.EventHandler(this.startingCoins_ValueChanged);
-            // 
             // startingLives
             // 
             this.startingLives.Enabled = false;
@@ -256,6 +228,69 @@
             this.label6.TabIndex = 3;
             this.label6.Text = "Starting Lives";
             // 
+            // startingCoins
+            // 
+            this.startingCoins.Enabled = false;
+            this.startingCoins.Location = new System.Drawing.Point(86, 31);
+            this.startingCoins.Maximum = new decimal(new int[] {
+            99,
+            0,
+            0,
+            0});
+            this.startingCoins.Name = "startingCoins";
+            this.startingCoins.Size = new System.Drawing.Size(33, 20);
+            this.startingCoins.TabIndex = 2;
+            this.startingCoins.ValueChanged += new System.EventHandler(this.startingCoins_ValueChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(7, 34);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(72, 13);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Starting Coins";
+            // 
+            // stopTimerCheckbox
+            // 
+            this.stopTimerCheckbox.AutoSize = true;
+            this.stopTimerCheckbox.Location = new System.Drawing.Point(7, 7);
+            this.stopTimerCheckbox.Name = "stopTimerCheckbox";
+            this.stopTimerCheckbox.Size = new System.Drawing.Size(77, 17);
+            this.stopTimerCheckbox.TabIndex = 0;
+            this.stopTimerCheckbox.Text = "Stop Timer";
+            this.stopTimerCheckbox.UseVisualStyleBackColor = true;
+            this.stopTimerCheckbox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.marioNameTextbox);
+            this.tabPage3.Controls.Add(this.label7);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(327, 253);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Text";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // marioNameTextbox
+            // 
+            this.marioNameTextbox.Location = new System.Drawing.Point(56, 7);
+            this.marioNameTextbox.MaxLength = 5;
+            this.marioNameTextbox.Name = "marioNameTextbox";
+            this.marioNameTextbox.Size = new System.Drawing.Size(100, 20);
+            this.marioNameTextbox.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(7, 10);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(42, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "MARIO";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -274,8 +309,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.standingJumpHeight)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.startingCoins)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.startingLives)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.startingCoins)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -299,6 +336,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown startingLives;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TextBox marioNameTextbox;
+        private System.Windows.Forms.Label label7;
     }
 }
 

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,6 +16,7 @@ namespace superflower
         public Form1()
         {
             InitializeComponent();
+            marioNameTextbox.Leave += marioNameTextbox_Leave;
         }
 
         /*
@@ -36,8 +38,13 @@ namespace superflower
                     MessageBox.Show("File Invalid: Unable to load");
                 else //We passed. Load it.
                 {
+                    workingRom.filePath = openFileDialog1.FileName;
+                    workingRom.fileName = openFileDialog1.SafeFileName;
                     workingRom.romLoaded = true;
                     workingRom.data = System.IO.File.ReadAllBytes(openFileDialog1.FileName);
+
+                    this.Text = "Superflower - Loaded "+workingRom.fileName;
+
                     if (PopulateOffsets())
                     {
                         MessageBox.Show("ROM loaded!");
@@ -104,6 +111,8 @@ namespace superflower
             else
                 stopTimerCheckbox.Checked = false;
 
+            saveButton.Enabled = true;
+
             return true;
         }
 
@@ -120,6 +129,17 @@ namespace superflower
                     return false;
 
             return true;
+        }
+
+        /*
+        * 
+        *  Change Text to HEX Data
+        * 
+        */
+
+        private void Text2Hex(string tmp)
+        {
+            return; //TODO: This.
         }
 
         private void standingJumpHeight_ValueChanged(object sender, EventArgs e)
@@ -162,6 +182,18 @@ namespace superflower
         private void startingCoins_ValueChanged(object sender, EventArgs e)
         {
             workingRom.data[Constants.Offsets.startingCoinsCount] = (byte)startingCoins.Value;
+        }
+
+        private void marioNameTextbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void marioNameTextbox_Leave(object sender, EventArgs e)
+        {
+            marioNameTextbox.Text = Regex.Replace(marioNameTextbox.Text, "[^0-9a-zA-Z©!-]+", "");
+            marioNameTextbox.Text = marioNameTextbox.Text.ToUpper();
         }
     }
 }
