@@ -13,7 +13,9 @@ namespace superflower
         {
             //ASM
             static public int timerDecreaseLogic = 0x37A2; //20 5F 8F is normal
+            static public byte[] timerCode = { 0x20, 0x5F, 0x8F };
             static public int bubbleBranch = 0x3681; //D0 13 is normal (bne 13)
+            static public byte[] bubbleCode = {0xD0, 0x13};
 
             //Game Logic
             static public int startingLivesCount = 0x107A;
@@ -37,6 +39,20 @@ namespace superflower
             static public int textOnePlayer = 0x9FC6; //size: 0xD
             static public int textTwoPlayer = 0x9FD6; //size: 0xD
             static public int textTop = 0x9FE6; //size: 0x4
+        }
+
+        static public class Letters
+        {
+            static public byte A = 0x0A;
+            static public byte Minus = 0x28;
+            static public byte Copyright = 0xCF;
+            static public byte Space = 0x24;
+            static public byte Exclamation = 0x2B;
+        }
+
+        static public class Opcodes
+        {
+            static public byte NOP = 0xEA;
         }
     }
 }

@@ -48,6 +48,7 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.marioNameTextbox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.BubblesCheckbox = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.runningJumpHeight)).BeginInit();
@@ -192,6 +193,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.BubblesCheckbox);
             this.tabPage2.Controls.Add(this.startingLives);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.startingCoins);
@@ -291,6 +293,17 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "MARIO";
             // 
+            // BubblesCheckbox
+            // 
+            this.BubblesCheckbox.AutoSize = true;
+            this.BubblesCheckbox.Location = new System.Drawing.Point(7, 81);
+            this.BubblesCheckbox.Name = "BubblesCheckbox";
+            this.BubblesCheckbox.Size = new System.Drawing.Size(114, 17);
+            this.BubblesCheckbox.TabIndex = 5;
+            this.BubblesCheckbox.Text = "Bubbles Anywhere";
+            this.BubblesCheckbox.UseVisualStyleBackColor = true;
+            this.BubblesCheckbox.CheckedChanged += new System.EventHandler(this.BubblesCheckbox_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -339,6 +352,7 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TextBox marioNameTextbox;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckBox BubblesCheckbox;
     }
 }
 

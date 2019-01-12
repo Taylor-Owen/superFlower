@@ -72,12 +72,16 @@ namespace superflower
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Filter = "Super Mario Bros ROM|*.nes";
             saveFileDialog1.Title = "Select a Location";
-            //saveFileDialog1.CheckFileExists = true;
-            //saveFileDialog1.CheckPathExists = true;
             saveFileDialog1.ShowDialog();
 
             if (saveFileDialog1.FileName != "")
             {
+                byte[] tempBytes = { };
+
+                tempBytes = Text2Hex(marioNameTextbox.Text);
+                for (int i=0;i<tempBytes.Length;i++)
+                    workingRom.data[Constants.Offsets.textMario + i] = tempBytes[i];
+
                 System.IO.File.WriteAllBytes(saveFileDialog1.FileName, workingRom.data);
                 MessageBox.Show("File Saved!");
             }
@@ -137,9 +141,40 @@ namespace superflower
         * 
         */
 
-        private void Text2Hex(string tmp)
+        private byte[] Text2Hex(string tmp)
         {
-            return; //TODO: This.
+            if (tmp.Length < 1)
+                return null;
+
+            string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            char[] array = alphabet.ToCharArray();
+
+            string numbers = "0123456789";
+            char[] numArray = numbers.ToCharArray();
+
+            byte[] payload = new byte[tmp.Length];
+
+            for (int i = 0; i < tmp.Length; i++)
+            {
+                if (tmp[i] == '!')
+                    payload[i] = Constants.Letters.Exclamation;
+
+                if (tmp[i] == '©')
+                    payload[i] = Constants.Letters.Copyright;
+
+                if (tmp[i] == '-')
+                    payload[i] = Constants.Letters.Minus;
+
+                if (Array.IndexOf(array, tmp[i]) != -1)
+                    payload[i] = (byte)(Array.IndexOf(array, tmp[i]) + 0x0A);
+
+                if (Array.IndexOf(numArray, tmp[i]) != -1)
+                    payload[i] = (byte)(Array.IndexOf(numArray, tmp[i]));
+
+
+            }
+                
+            return payload;
         }
 
         private void standingJumpHeight_ValueChanged(object sender, EventArgs e)
@@ -162,15 +197,13 @@ namespace superflower
         {
             if (stopTimerCheckbox.Checked)
             {
-                for (int i=0;i<3;i++)
-                    workingRom.data[Constants.Offsets.timerDecreaseLogic+i] = 0xEA;
+                for (int i=0;i<Constants.Offsets.timerCode.Length;i++)
+                    workingRom.data[Constants.Offsets.timerDecreaseLogic+i] = Constants.Opcodes.NOP;
             }
             else if (!stopTimerCheckbox.Checked)
             {
-                //20 5F 8F
-                workingRom.data[Constants.Offsets.timerDecreaseLogic] = 0x20;
-                workingRom.data[Constants.Offsets.timerDecreaseLogic + 1] = 0x5F;
-                workingRom.data[Constants.Offsets.timerDecreaseLogic + 2] = 0x8F;
+                for (int i = 0; i < Constants.Offsets.timerCode.Length; i++)
+                    workingRom.data[Constants.Offsets.timerDecreaseLogic + i] = Constants.Offsets.timerCode[i];
             }
         }
 
@@ -194,6 +227,20 @@ namespace superflower
         {
             marioNameTextbox.Text = Regex.Replace(marioNameTextbox.Text, "[^0-9a-zA-Z©!-]+", "");
             marioNameTextbox.Text = marioNameTextbox.Text.ToUpper();
+        }
+
+        private void BubblesCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (BubblesCheckbox.Checked)
+            {
+                for (int i = 0; i < Constants.Offsets.bubbleCode.Length; i++)
+                    workingRom.data[Constants.Offsets.bubbleBranch + i] = Constants.Opcodes.NOP;
+            }
+            else if (!BubblesCheckbox.Checked)
+            {
+                for (int i=0; i < Constants.Offsets.bubbleCode.Length; i++)
+                    workingRom.data[Constants.Offsets.bubbleBranch + i] = Constants.Offsets.bubbleCode[i];
+            }
         }
     }
 }
