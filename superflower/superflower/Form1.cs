@@ -17,6 +17,17 @@ namespace superflower
         {
             InitializeComponent();
             marioNameTextbox.Leave += marioNameTextbox_Leave;
+            worldTextBox.Leave += worldTextBox_Leave;
+            timeupTextBox.Leave += timeupTextBox_Leave;
+            timeTextBox.Leave += timeTextBox_Leave;
+            luigiTextBox.Leave += luigiTextBox_Leave;
+            copyrightTextBox.Leave += copyrightTextBox_Leave;
+            playeroneTextBox.Leave += playeroneTextBox_Leave;
+            playertwoTextBox.Leave += playertwoTextBox_Leave;
+            worldBlackScreenTextBox.Leave += worldBlackScreenTextBox_Leave;
+            gameoverTextBox.Leave += gameoverTextBox_Leave;
+            warpzoneTextBox.Leave += warpzoneTextBox_Leave;
+
         }
 
         /*
@@ -76,11 +87,17 @@ namespace superflower
 
             if (saveFileDialog1.FileName != "")
             {
-                byte[] tempBytes = { };
-
-                tempBytes = Text2Hex(marioNameTextbox.Text);
-                for (int i=0;i<tempBytes.Length;i++)
-                    workingRom.data[Constants.Offsets.textMario + i] = tempBytes[i];
+                InsertTextToRom(marioNameTextbox, Constants.Offsets.textMario);
+                InsertTextToRom(worldTextBox, Constants.Offsets.textWorld);
+                InsertTextToRom(timeTextBox, Constants.Offsets.textTime);
+                InsertTextToRom(timeupTextBox, Constants.Offsets.textTimeUp);
+                InsertTextToRom(gameoverTextBox, Constants.Offsets.textGameOver);
+                InsertTextToRom(warpzoneTextBox, Constants.Offsets.textWarpZone);
+                InsertTextToRom(luigiTextBox, Constants.Offsets.textLuigi);
+                InsertTextToRom(playeroneTextBox, Constants.Offsets.textOnePlayer);
+                InsertTextToRom(playertwoTextBox, Constants.Offsets.textTwoPlayer);
+                InsertTextToRom(copyrightTextBox, Constants.Offsets.textNintendo);
+                InsertTextToRom(worldBlackScreenTextBox, Constants.Offsets.textWorld2);
 
                 System.IO.File.WriteAllBytes(saveFileDialog1.FileName, workingRom.data);
                 MessageBox.Show("File Saved!");
@@ -115,7 +132,9 @@ namespace superflower
             else
                 stopTimerCheckbox.Checked = false;
 
+            //Enable last sections
             saveButton.Enabled = true;
+            tabControl1.Enabled = true;
 
             return true;
         }
@@ -146,11 +165,8 @@ namespace superflower
             if (tmp.Length < 1)
                 return null;
 
-            string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            string alphabet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             char[] array = alphabet.ToCharArray();
-
-            string numbers = "0123456789";
-            char[] numArray = numbers.ToCharArray();
 
             byte[] payload = new byte[tmp.Length];
 
@@ -158,23 +174,46 @@ namespace superflower
             {
                 if (tmp[i] == '!')
                     payload[i] = Constants.Letters.Exclamation;
-
-                if (tmp[i] == '©')
+                else if (tmp[i] == '©')
                     payload[i] = Constants.Letters.Copyright;
-
-                if (tmp[i] == '-')
+                else if (tmp[i] == '-')
                     payload[i] = Constants.Letters.Minus;
-
-                if (Array.IndexOf(array, tmp[i]) != -1)
-                    payload[i] = (byte)(Array.IndexOf(array, tmp[i]) + 0x0A);
-
-                if (Array.IndexOf(numArray, tmp[i]) != -1)
-                    payload[i] = (byte)(Array.IndexOf(numArray, tmp[i]));
+                else if (tmp[i] == ' ')
+                    payload[i] = Constants.Letters.Space;
+                else if (Array.IndexOf(array, tmp[i]) != -1)
+                    payload[i] = (byte)(Array.IndexOf(array, tmp[i]));
+                else
+                    payload[i] = Constants.Letters.Space;
 
 
             }
                 
             return payload;
+        }
+
+        /*
+        * 
+        *  Prepare text to scrub and prepare for saving to rom
+        * 
+        */
+
+        private string PrepareText(string tmp)
+        {
+            tmp = Regex.Replace(tmp, "[^0-9a-zA-Z©!\\-\\s]+$", "");
+            tmp = tmp.ToUpper();
+            return tmp;
+        }
+
+        private void InsertTextToRom(TextBox text, int offset)
+        {
+            if ((string)text.Tag == text.Text)
+                return;
+
+            byte[] tempBytes = { };
+
+            tempBytes = Text2Hex(text.Text);
+            for (int i = 0; i < tempBytes.Length; i++)
+                workingRom.data[offset + i] = tempBytes[i];
         }
 
         private void standingJumpHeight_ValueChanged(object sender, EventArgs e)
@@ -225,8 +264,7 @@ namespace superflower
 
         private void marioNameTextbox_Leave(object sender, EventArgs e)
         {
-            marioNameTextbox.Text = Regex.Replace(marioNameTextbox.Text, "[^0-9a-zA-Z©!-]+", "");
-            marioNameTextbox.Text = marioNameTextbox.Text.ToUpper();
+            marioNameTextbox.Text = PrepareText(marioNameTextbox.Text);
         }
 
         private void BubblesCheckbox_CheckedChanged(object sender, EventArgs e)
@@ -242,5 +280,56 @@ namespace superflower
                     workingRom.data[Constants.Offsets.bubbleBranch + i] = Constants.Offsets.bubbleCode[i];
             }
         }
+
+        private void worldTextBox_Leave(object sender, EventArgs e)
+        {
+            worldTextBox.Text = PrepareText(worldTextBox.Text);
+        }
+
+        private void timeTextBox_Leave(object sender, EventArgs e)
+        {
+            timeTextBox.Text = PrepareText(timeTextBox.Text);
+        }
+
+        private void timeupTextBox_Leave(object sender, EventArgs e)
+        {
+            timeupTextBox.Text = PrepareText(timeupTextBox.Text);
+        }
+
+        private void gameoverTextBox_Leave(object sender, EventArgs e)
+        {
+            gameoverTextBox.Text = PrepareText(gameoverTextBox.Text);
+        }
+
+        private void warpzoneTextBox_Leave(object sender, EventArgs e)
+        {
+            warpzoneTextBox.Text = PrepareText(warpzoneTextBox.Text);
+        }
+
+        private void luigiTextBox_Leave(object sender, EventArgs e)
+        {
+            luigiTextBox.Text = PrepareText(luigiTextBox.Text);
+        }
+
+        private void playeroneTextBox_Leave(object sender, EventArgs e)
+        {
+            playeroneTextBox.Text = PrepareText(playeroneTextBox.Text);
+        }
+
+        private void playertwoTextBox_Leave(object sender, EventArgs e)
+        {
+            playertwoTextBox.Text = PrepareText(playertwoTextBox.Text);
+        }
+
+        private void copyrightTextBox_Leave(object sender, EventArgs e)
+        {
+            copyrightTextBox.Text = PrepareText(copyrightTextBox.Text);
+        }
+
+        private void worldBlackScreenTextBox_Leave(object sender, EventArgs e)
+        {
+            worldBlackScreenTextBox.Text = PrepareText(worldBlackScreenTextBox.Text);
+        }
+
     }
 }

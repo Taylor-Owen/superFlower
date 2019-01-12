@@ -40,15 +40,37 @@
             this.standingJumpHeight = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.BubblesCheckbox = new System.Windows.Forms.CheckBox();
             this.startingLives = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.startingCoins = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.stopTimerCheckbox = new System.Windows.Forms.CheckBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.topTextBox = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.playertwoTextBox = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.playeroneTextBox = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.copyrightTextBox = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.luigiTextBox = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.warpzoneTextBox = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.gameoverTextBox = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.timeupTextBox = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.worldBlackScreenTextBox = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.timeTextBox = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.worldTextBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.marioNameTextbox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.BubblesCheckbox = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.runningJumpHeight)).BeginInit();
@@ -86,6 +108,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Enabled = false;
             this.tabControl1.Location = new System.Drawing.Point(13, 43);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -207,6 +230,17 @@
             this.tabPage2.Text = "ASM Patches";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // BubblesCheckbox
+            // 
+            this.BubblesCheckbox.AutoSize = true;
+            this.BubblesCheckbox.Location = new System.Drawing.Point(7, 81);
+            this.BubblesCheckbox.Name = "BubblesCheckbox";
+            this.BubblesCheckbox.Size = new System.Drawing.Size(114, 17);
+            this.BubblesCheckbox.TabIndex = 5;
+            this.BubblesCheckbox.Text = "Bubbles Anywhere";
+            this.BubblesCheckbox.UseVisualStyleBackColor = true;
+            this.BubblesCheckbox.CheckedChanged += new System.EventHandler(this.BubblesCheckbox_CheckedChanged);
+            // 
             // startingLives
             // 
             this.startingLives.Enabled = false;
@@ -266,6 +300,29 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.AutoScroll = true;
+            this.tabPage3.Controls.Add(this.topTextBox);
+            this.tabPage3.Controls.Add(this.label18);
+            this.tabPage3.Controls.Add(this.playertwoTextBox);
+            this.tabPage3.Controls.Add(this.label17);
+            this.tabPage3.Controls.Add(this.playeroneTextBox);
+            this.tabPage3.Controls.Add(this.label16);
+            this.tabPage3.Controls.Add(this.copyrightTextBox);
+            this.tabPage3.Controls.Add(this.label15);
+            this.tabPage3.Controls.Add(this.luigiTextBox);
+            this.tabPage3.Controls.Add(this.label14);
+            this.tabPage3.Controls.Add(this.warpzoneTextBox);
+            this.tabPage3.Controls.Add(this.label13);
+            this.tabPage3.Controls.Add(this.gameoverTextBox);
+            this.tabPage3.Controls.Add(this.label12);
+            this.tabPage3.Controls.Add(this.timeupTextBox);
+            this.tabPage3.Controls.Add(this.label11);
+            this.tabPage3.Controls.Add(this.worldBlackScreenTextBox);
+            this.tabPage3.Controls.Add(this.label10);
+            this.tabPage3.Controls.Add(this.timeTextBox);
+            this.tabPage3.Controls.Add(this.label9);
+            this.tabPage3.Controls.Add(this.worldTextBox);
+            this.tabPage3.Controls.Add(this.label8);
             this.tabPage3.Controls.Add(this.marioNameTextbox);
             this.tabPage3.Controls.Add(this.label7);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -276,6 +333,215 @@
             this.tabPage3.Text = "Text";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // topTextBox
+            // 
+            this.topTextBox.Location = new System.Drawing.Point(45, 265);
+            this.topTextBox.MaxLength = 4;
+            this.topTextBox.Name = "topTextBox";
+            this.topTextBox.Size = new System.Drawing.Size(100, 20);
+            this.topTextBox.TabIndex = 23;
+            this.topTextBox.Tag = "TOP-";
+            this.topTextBox.Text = "TOP-";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(7, 269);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(32, 13);
+            this.label18.TabIndex = 22;
+            this.label18.Text = "TOP-";
+            // 
+            // playertwoTextBox
+            // 
+            this.playertwoTextBox.Location = new System.Drawing.Point(105, 239);
+            this.playertwoTextBox.MaxLength = 13;
+            this.playertwoTextBox.Name = "playertwoTextBox";
+            this.playertwoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.playertwoTextBox.TabIndex = 21;
+            this.playertwoTextBox.Tag = "2 PLAYER GAME";
+            this.playertwoTextBox.Text = "2 PLAYER GAME";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(7, 243);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(92, 13);
+            this.label17.TabIndex = 20;
+            this.label17.Text = "2 PLAYER GAME";
+            // 
+            // playeroneTextBox
+            // 
+            this.playeroneTextBox.Location = new System.Drawing.Point(105, 215);
+            this.playeroneTextBox.MaxLength = 13;
+            this.playeroneTextBox.Name = "playeroneTextBox";
+            this.playeroneTextBox.Size = new System.Drawing.Size(100, 20);
+            this.playeroneTextBox.TabIndex = 19;
+            this.playeroneTextBox.Tag = "1 PLAYER GAME";
+            this.playeroneTextBox.Text = "1 PLAYER GAME";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(7, 219);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(92, 13);
+            this.label16.TabIndex = 18;
+            this.label16.Text = "1 PLAYER GAME";
+            // 
+            // copyrightTextBox
+            // 
+            this.copyrightTextBox.Location = new System.Drawing.Point(114, 189);
+            this.copyrightTextBox.MaxLength = 14;
+            this.copyrightTextBox.Name = "copyrightTextBox";
+            this.copyrightTextBox.Size = new System.Drawing.Size(100, 20);
+            this.copyrightTextBox.TabIndex = 17;
+            this.copyrightTextBox.Tag = "©1985 NINTENDO";
+            this.copyrightTextBox.Text = "©1985 NINTENDO";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(7, 193);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(101, 13);
+            this.label15.TabIndex = 16;
+            this.label15.Text = "C 1985 NINTENDO";
+            // 
+            // luigiTextBox
+            // 
+            this.luigiTextBox.Location = new System.Drawing.Point(48, 163);
+            this.luigiTextBox.MaxLength = 5;
+            this.luigiTextBox.Name = "luigiTextBox";
+            this.luigiTextBox.Size = new System.Drawing.Size(100, 20);
+            this.luigiTextBox.TabIndex = 15;
+            this.luigiTextBox.Tag = "LUIGI";
+            this.luigiTextBox.Text = "LUIGI";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(7, 167);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(35, 13);
+            this.label14.TabIndex = 14;
+            this.label14.Text = "LUIGI";
+            // 
+            // warpzoneTextBox
+            // 
+            this.warpzoneTextBox.Location = new System.Drawing.Point(183, 138);
+            this.warpzoneTextBox.MaxLength = 21;
+            this.warpzoneTextBox.Name = "warpzoneTextBox";
+            this.warpzoneTextBox.Size = new System.Drawing.Size(100, 20);
+            this.warpzoneTextBox.TabIndex = 13;
+            this.warpzoneTextBox.Tag = "WELCOME TO WARP ZONE!";
+            this.warpzoneTextBox.Text = "WELCOME TO WARP ZONE!";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(7, 141);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(174, 13);
+            this.label13.TabIndex = 12;
+            this.label13.Text = "WELCOME TO THE WARP ZONE";
+            // 
+            // gameoverTextBox
+            // 
+            this.gameoverTextBox.Location = new System.Drawing.Point(79, 111);
+            this.gameoverTextBox.MaxLength = 9;
+            this.gameoverTextBox.Name = "gameoverTextBox";
+            this.gameoverTextBox.Size = new System.Drawing.Size(100, 20);
+            this.gameoverTextBox.TabIndex = 11;
+            this.gameoverTextBox.Tag = "GAME OVER";
+            this.gameoverTextBox.Text = "GAME OVER";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(7, 115);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(71, 13);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "GAME OVER";
+            // 
+            // timeupTextBox
+            // 
+            this.timeupTextBox.Location = new System.Drawing.Point(56, 85);
+            this.timeupTextBox.MaxLength = 7;
+            this.timeupTextBox.Name = "timeupTextBox";
+            this.timeupTextBox.Size = new System.Drawing.Size(100, 20);
+            this.timeupTextBox.TabIndex = 9;
+            this.timeupTextBox.Tag = "TIME UP";
+            this.timeupTextBox.Text = "TIME UP";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(7, 89);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(51, 13);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "TIME UP";
+            // 
+            // worldBlackScreenTextBox
+            // 
+            this.worldBlackScreenTextBox.Location = new System.Drawing.Point(183, 284);
+            this.worldBlackScreenTextBox.MaxLength = 5;
+            this.worldBlackScreenTextBox.Name = "worldBlackScreenTextBox";
+            this.worldBlackScreenTextBox.Size = new System.Drawing.Size(100, 20);
+            this.worldBlackScreenTextBox.TabIndex = 7;
+            this.worldBlackScreenTextBox.Tag = "WORLD";
+            this.worldBlackScreenTextBox.Text = "WORLD";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(7, 288);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(170, 13);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "WORLD (Shown in black screens)";
+            // 
+            // timeTextBox
+            // 
+            this.timeTextBox.Location = new System.Drawing.Point(56, 59);
+            this.timeTextBox.MaxLength = 4;
+            this.timeTextBox.Name = "timeTextBox";
+            this.timeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.timeTextBox.TabIndex = 5;
+            this.timeTextBox.Tag = "TIME";
+            this.timeTextBox.Text = "TIME";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(7, 63);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(33, 13);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "TIME";
+            // 
+            // worldTextBox
+            // 
+            this.worldTextBox.Location = new System.Drawing.Point(56, 33);
+            this.worldTextBox.MaxLength = 5;
+            this.worldTextBox.Name = "worldTextBox";
+            this.worldTextBox.Size = new System.Drawing.Size(100, 20);
+            this.worldTextBox.TabIndex = 3;
+            this.worldTextBox.Tag = "WORLD";
+            this.worldTextBox.Text = "WORLD";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(7, 37);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(48, 13);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "WORLD";
+            // 
             // marioNameTextbox
             // 
             this.marioNameTextbox.Location = new System.Drawing.Point(56, 7);
@@ -283,26 +549,17 @@
             this.marioNameTextbox.Name = "marioNameTextbox";
             this.marioNameTextbox.Size = new System.Drawing.Size(100, 20);
             this.marioNameTextbox.TabIndex = 1;
+            this.marioNameTextbox.Tag = "MARIO";
+            this.marioNameTextbox.Text = "MARIO";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 10);
+            this.label7.Location = new System.Drawing.Point(7, 11);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 13);
             this.label7.TabIndex = 0;
             this.label7.Text = "MARIO";
-            // 
-            // BubblesCheckbox
-            // 
-            this.BubblesCheckbox.AutoSize = true;
-            this.BubblesCheckbox.Location = new System.Drawing.Point(7, 81);
-            this.BubblesCheckbox.Name = "BubblesCheckbox";
-            this.BubblesCheckbox.Size = new System.Drawing.Size(114, 17);
-            this.BubblesCheckbox.TabIndex = 5;
-            this.BubblesCheckbox.Text = "Bubbles Anywhere";
-            this.BubblesCheckbox.UseVisualStyleBackColor = true;
-            this.BubblesCheckbox.CheckedChanged += new System.EventHandler(this.BubblesCheckbox_CheckedChanged);
             // 
             // Form1
             // 
@@ -353,6 +610,28 @@
         private System.Windows.Forms.TextBox marioNameTextbox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox BubblesCheckbox;
+        private System.Windows.Forms.TextBox topTextBox;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox playertwoTextBox;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox playeroneTextBox;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox copyrightTextBox;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox luigiTextBox;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox warpzoneTextBox;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox gameoverTextBox;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox timeupTextBox;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox worldBlackScreenTextBox;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox timeTextBox;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox worldTextBox;
+        private System.Windows.Forms.Label label8;
     }
 }
 

@@ -39,6 +39,16 @@ namespace superflower
             static public int textOnePlayer = 0x9FC6; //size: 0xD
             static public int textTwoPlayer = 0x9FD6; //size: 0xD
             static public int textTop = 0x9FE6; //size: 0x4
+            static public int textThankYouMario = 0x0D67; //size: 0x10
+            static public int textThankYouLuigi = 0x0D7B; //size: 0x10
+            static public int textThankYouButOurPrincess = 0x0D8F; //size: 0x16
+            static public int textThankYouButOurPrincess2 = 0x0DA8; //size: 0xF
+            static public int textYourQuestIsOver = 0x0DBB; //size: 0x12
+            static public int textYourQuestIsOver2 = 0x0DD2; //size: 0x1A
+            static public int textYourQuestIsOver3 = 0x0DF1; //size: 0xD
+            static public int textYourQuestIsOver4 = 0x0E02; //size: 0x11
+
+
         }
 
         static public class Letters
