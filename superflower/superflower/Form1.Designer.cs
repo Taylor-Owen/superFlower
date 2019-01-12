@@ -47,8 +47,24 @@
             this.label5 = new System.Windows.Forms.Label();
             this.stopTimerCheckbox = new System.Windows.Forms.CheckBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.quest3TextBox = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.quest2TextBox = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.questTextBox = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.quest4TextBox = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.butprincessTextBox = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.thankyouluigiTextBox = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.thankyoumarioTextBox = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.butprincess2TextBox = new System.Windows.Forms.TextBox();
             this.topTextBox = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.playertwoTextBox = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.playeroneTextBox = new System.Windows.Forms.TextBox();
@@ -301,8 +317,24 @@
             // tabPage3
             // 
             this.tabPage3.AutoScroll = true;
+            this.tabPage3.Controls.Add(this.quest3TextBox);
+            this.tabPage3.Controls.Add(this.label26);
+            this.tabPage3.Controls.Add(this.quest2TextBox);
+            this.tabPage3.Controls.Add(this.label25);
+            this.tabPage3.Controls.Add(this.questTextBox);
+            this.tabPage3.Controls.Add(this.label24);
+            this.tabPage3.Controls.Add(this.quest4TextBox);
+            this.tabPage3.Controls.Add(this.label23);
+            this.tabPage3.Controls.Add(this.butprincessTextBox);
+            this.tabPage3.Controls.Add(this.label22);
+            this.tabPage3.Controls.Add(this.thankyouluigiTextBox);
+            this.tabPage3.Controls.Add(this.label21);
+            this.tabPage3.Controls.Add(this.thankyoumarioTextBox);
+            this.tabPage3.Controls.Add(this.label20);
+            this.tabPage3.Controls.Add(this.butprincess2TextBox);
             this.tabPage3.Controls.Add(this.topTextBox);
             this.tabPage3.Controls.Add(this.label18);
+            this.tabPage3.Controls.Add(this.label19);
             this.tabPage3.Controls.Add(this.playertwoTextBox);
             this.tabPage3.Controls.Add(this.label17);
             this.tabPage3.Controls.Add(this.playeroneTextBox);
@@ -333,6 +365,149 @@
             this.tabPage3.Text = "Text";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // quest3TextBox
+            // 
+            this.quest3TextBox.Location = new System.Drawing.Point(105, 453);
+            this.quest3TextBox.MaxLength = 13;
+            this.quest3TextBox.Name = "quest3TextBox";
+            this.quest3TextBox.Size = new System.Drawing.Size(100, 20);
+            this.quest3TextBox.TabIndex = 39;
+            this.quest3TextBox.Tag = "PUSH BUTTON B";
+            this.quest3TextBox.Text = "PUSH BUTTON B";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(4, 456);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(95, 13);
+            this.label26.TabIndex = 38;
+            this.label26.Text = "PUSH BUTTON B";
+            // 
+            // quest2TextBox
+            // 
+            this.quest2TextBox.Location = new System.Drawing.Point(197, 430);
+            this.quest2TextBox.MaxLength = 27;
+            this.quest2TextBox.Name = "quest2TextBox";
+            this.quest2TextBox.Size = new System.Drawing.Size(100, 20);
+            this.quest2TextBox.TabIndex = 37;
+            this.quest2TextBox.Tag = "WE PRESENT YOU A NEW QUEST.";
+            this.quest2TextBox.Text = "WE PRESENT YOU A NEW QUEST.";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(4, 434);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(187, 13);
+            this.label25.TabIndex = 36;
+            this.label25.Text = "WE PRESENT YOU A NEW QUEST.";
+            // 
+            // questTextBox
+            // 
+            this.questTextBox.Location = new System.Drawing.Point(135, 404);
+            this.questTextBox.MaxLength = 19;
+            this.questTextBox.Name = "questTextBox";
+            this.questTextBox.Size = new System.Drawing.Size(100, 20);
+            this.questTextBox.TabIndex = 35;
+            this.questTextBox.Tag = "YOUR QUEST IS OVER.";
+            this.questTextBox.Text = "YOUR QUEST IS OVER.";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(4, 409);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(127, 13);
+            this.label24.TabIndex = 34;
+            this.label24.Text = "YOUR QUEST IS OVER.";
+            // 
+            // quest4TextBox
+            // 
+            this.quest4TextBox.Location = new System.Drawing.Point(130, 479);
+            this.quest4TextBox.MaxLength = 17;
+            this.quest4TextBox.Name = "quest4TextBox";
+            this.quest4TextBox.Size = new System.Drawing.Size(100, 20);
+            this.quest4TextBox.TabIndex = 33;
+            this.quest4TextBox.Tag = "TO SELECT A WORLD";
+            this.quest4TextBox.Text = "TO SELECT A WORLD";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(4, 482);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(120, 13);
+            this.label23.TabIndex = 32;
+            this.label23.Text = "TO SELECT A WORLD";
+            // 
+            // butprincessTextBox
+            // 
+            this.butprincessTextBox.Location = new System.Drawing.Point(150, 356);
+            this.butprincessTextBox.MaxLength = 22;
+            this.butprincessTextBox.Name = "butprincessTextBox";
+            this.butprincessTextBox.Size = new System.Drawing.Size(100, 20);
+            this.butprincessTextBox.TabIndex = 31;
+            this.butprincessTextBox.Tag = "BUT OUR PRINCESS IS IN";
+            this.butprincessTextBox.Text = "BUT OUR PRINCESS IS IN";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(4, 360);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(140, 13);
+            this.label22.TabIndex = 30;
+            this.label22.Text = "BUT OUR PRINCESS IS IN";
+            // 
+            // thankyouluigiTextBox
+            // 
+            this.thankyouluigiTextBox.Location = new System.Drawing.Point(114, 330);
+            this.thankyouluigiTextBox.MaxLength = 16;
+            this.thankyouluigiTextBox.Name = "thankyouluigiTextBox";
+            this.thankyouluigiTextBox.Size = new System.Drawing.Size(100, 20);
+            this.thankyouluigiTextBox.TabIndex = 29;
+            this.thankyouluigiTextBox.Tag = "THANK YOU LUIGI!";
+            this.thankyouluigiTextBox.Text = "THANK YOU LUIGI!";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(4, 334);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(104, 13);
+            this.label21.TabIndex = 28;
+            this.label21.Text = "THANK YOU LUIGI!";
+            // 
+            // thankyoumarioTextBox
+            // 
+            this.thankyoumarioTextBox.Location = new System.Drawing.Point(118, 305);
+            this.thankyoumarioTextBox.MaxLength = 16;
+            this.thankyoumarioTextBox.Name = "thankyoumarioTextBox";
+            this.thankyoumarioTextBox.Size = new System.Drawing.Size(100, 20);
+            this.thankyoumarioTextBox.TabIndex = 27;
+            this.thankyoumarioTextBox.Tag = "THANK YOU MARIO!";
+            this.thankyoumarioTextBox.Text = "THANK YOU MARIO!";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(4, 308);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(111, 13);
+            this.label20.TabIndex = 26;
+            this.label20.Text = "THANK YOU MARIO!";
+            // 
+            // butprincess2TextBox
+            // 
+            this.butprincess2TextBox.Location = new System.Drawing.Point(114, 382);
+            this.butprincess2TextBox.MaxLength = 15;
+            this.butprincess2TextBox.Name = "butprincess2TextBox";
+            this.butprincess2TextBox.Size = new System.Drawing.Size(100, 20);
+            this.butprincess2TextBox.TabIndex = 25;
+            this.butprincess2TextBox.Tag = "ANOTHER CASTLE!";
+            this.butprincess2TextBox.Text = "ANOTHER CASTLE!";
+            // 
             // topTextBox
             // 
             this.topTextBox.Location = new System.Drawing.Point(45, 265);
@@ -351,6 +526,15 @@
             this.label18.Size = new System.Drawing.Size(32, 13);
             this.label18.TabIndex = 22;
             this.label18.Text = "TOP-";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(4, 386);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(107, 13);
+            this.label19.TabIndex = 24;
+            this.label19.Text = "ANOTHER CASTLE!";
             // 
             // playertwoTextBox
             // 
@@ -570,6 +754,7 @@
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
+            this.Padding = new System.Windows.Forms.Padding(3);
             this.Text = "superFlower";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -632,6 +817,22 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox worldTextBox;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox butprincess2TextBox;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox quest3TextBox;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox quest2TextBox;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox questTextBox;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox quest4TextBox;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox butprincessTextBox;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox thankyouluigiTextBox;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox thankyoumarioTextBox;
+        private System.Windows.Forms.Label label20;
     }
 }
 

@@ -27,7 +27,14 @@ namespace superflower
             worldBlackScreenTextBox.Leave += worldBlackScreenTextBox_Leave;
             gameoverTextBox.Leave += gameoverTextBox_Leave;
             warpzoneTextBox.Leave += warpzoneTextBox_Leave;
-
+            thankyoumarioTextBox.Leave += thankyoumarioTextBox_Leave;
+            thankyouluigiTextBox.Leave += thankyouluigiTextBox_Leave;
+            butprincessTextBox.Leave += butprincessTextBox_Leave;
+            butprincess2TextBox.Leave += butprincess2TextBox_Leave;
+            questTextBox.Leave += questTextBox_Leave;
+            quest2TextBox.Leave += quest2TextBox_Leave;
+            quest3TextBox.Leave += quest3TextBox_Leave;
+            quest4TextBox.Leave += quest4TextBox_Leave;
         }
 
         /*
@@ -98,6 +105,15 @@ namespace superflower
                 InsertTextToRom(playertwoTextBox, Constants.Offsets.textTwoPlayer);
                 InsertTextToRom(copyrightTextBox, Constants.Offsets.textNintendo);
                 InsertTextToRom(worldBlackScreenTextBox, Constants.Offsets.textWorld2);
+                InsertTextToRom(thankyoumarioTextBox, Constants.Offsets.textThankYouMario);
+                InsertTextToRom(thankyouluigiTextBox, Constants.Offsets.textThankYouLuigi);
+                InsertTextToRom(butprincessTextBox, Constants.Offsets.textThankYouButOurPrincess);
+                InsertTextToRom(butprincess2TextBox, Constants.Offsets.textThankYouButOurPrincess2);
+                InsertTextToRom(questTextBox, Constants.Offsets.textYourQuestIsOver);
+                InsertTextToRom(quest2TextBox, Constants.Offsets.textYourQuestIsOver2);
+                InsertTextToRom(quest3TextBox, Constants.Offsets.textYourQuestIsOver3);
+                InsertTextToRom(quest4TextBox, Constants.Offsets.textYourQuestIsOver4);
+
 
                 System.IO.File.WriteAllBytes(saveFileDialog1.FileName, workingRom.data);
                 MessageBox.Show("File Saved!");
@@ -180,6 +196,8 @@ namespace superflower
                     payload[i] = Constants.Letters.Minus;
                 else if (tmp[i] == ' ')
                     payload[i] = Constants.Letters.Space;
+                else if (tmp[i] == '.')
+                    payload[i] = Constants.Letters.Period;
                 else if (Array.IndexOf(array, tmp[i]) != -1)
                     payload[i] = (byte)(Array.IndexOf(array, tmp[i]));
                 else
@@ -199,7 +217,7 @@ namespace superflower
 
         private string PrepareText(string tmp)
         {
-            tmp = Regex.Replace(tmp, "[^0-9a-zA-Z©!\\-\\s]+$", "");
+            tmp = Regex.Replace(tmp, "[^0-9a-zA-Z©.!\\-\\s]+$", "");
             tmp = tmp.ToUpper();
             return tmp;
         }
@@ -329,6 +347,38 @@ namespace superflower
         private void worldBlackScreenTextBox_Leave(object sender, EventArgs e)
         {
             worldBlackScreenTextBox.Text = PrepareText(worldBlackScreenTextBox.Text);
+        }
+        private void thankyoumarioTextBox_Leave(object sender, EventArgs e)
+        {
+            thankyoumarioTextBox.Text = PrepareText(thankyoumarioTextBox.Text);
+        }
+        private void thankyouluigiTextBox_Leave(object sender, EventArgs e)
+        {
+            thankyouluigiTextBox.Text = PrepareText(thankyouluigiTextBox.Text);
+        }
+        private void butprincessTextBox_Leave(object sender, EventArgs e)
+        {
+            butprincessTextBox.Text = PrepareText(butprincessTextBox.Text);
+        }
+        private void butprincess2TextBox_Leave(object sender, EventArgs e)
+        {
+            butprincess2TextBox.Text = PrepareText(butprincess2TextBox.Text);
+        }
+        private void questTextBox_Leave(object sender, EventArgs e)
+        {
+            questTextBox.Text = PrepareText(questTextBox.Text);
+        }
+        private void quest2TextBox_Leave(object sender, EventArgs e)
+        {
+            quest2TextBox.Text = PrepareText(quest2TextBox.Text);
+        }
+        private void quest3TextBox_Leave(object sender, EventArgs e)
+        {
+            quest3TextBox.Text = PrepareText(quest3TextBox.Text);
+        }
+        private void quest4TextBox_Leave(object sender, EventArgs e)
+        {
+            quest4TextBox.Text = PrepareText(quest4TextBox.Text);
         }
 
     }
