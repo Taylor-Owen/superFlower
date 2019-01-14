@@ -381,5 +381,44 @@ namespace superflower
             quest4TextBox.Text = PrepareText(quest4TextBox.Text);
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+                workingRom.data[Constants.Offsets.overworldSky] = (byte)comboBox1.SelectedIndex;
+        }
+
+        private void underworldComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            workingRom.data[Constants.Offsets.undergroundSky] = (byte)underworldComboBox.SelectedIndex;
+        }
+
+        private void underwaterComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            workingRom.data[Constants.Offsets.underwaterSky] = (byte)underwaterComboBox.SelectedIndex;
+        }
+
+        private void dungeonComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            workingRom.data[Constants.Offsets.dungeonSky] = (byte)dungeonComboBox.SelectedIndex;
+        }
+
+        private void nighttimeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            workingRom.data[Constants.Offsets.nighttimeSky] = (byte)nighttimeComboBox.SelectedIndex;
+        }
+
+        private void winterComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            workingRom.data[Constants.Offsets.winterDaySky] = (byte)winterComboBox.SelectedIndex;
+        }
+
+        private void winternightComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            workingRom.data[Constants.Offsets.winterNightSky] = (byte)winternightComboBox.SelectedIndex;
+        }
+
+        private void sixthreeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            workingRom.data[Constants.Offsets.sixdashthreeSky] = (byte)sixthreeComboBox.SelectedIndex;
+        }
     }
 }

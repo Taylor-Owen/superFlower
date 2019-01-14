@@ -91,6 +91,20 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label27 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.underworldComboBox = new System.Windows.Forms.ComboBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.underwaterComboBox = new System.Windows.Forms.ComboBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.dungeonComboBox = new System.Windows.Forms.ComboBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.sixthreeComboBox = new System.Windows.Forms.ComboBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.nighttimeComboBox = new System.Windows.Forms.ComboBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.winterComboBox = new System.Windows.Forms.ComboBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.winternightComboBox = new System.Windows.Forms.ComboBox();
+            this.label34 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.runningJumpHeight)).BeginInit();
@@ -765,11 +779,25 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.winternightComboBox);
+            this.groupBox1.Controls.Add(this.sixthreeComboBox);
+            this.groupBox1.Controls.Add(this.label31);
+            this.groupBox1.Controls.Add(this.label34);
+            this.groupBox1.Controls.Add(this.winterComboBox);
+            this.groupBox1.Controls.Add(this.label33);
+            this.groupBox1.Controls.Add(this.nighttimeComboBox);
+            this.groupBox1.Controls.Add(this.label32);
+            this.groupBox1.Controls.Add(this.dungeonComboBox);
+            this.groupBox1.Controls.Add(this.label30);
+            this.groupBox1.Controls.Add(this.underwaterComboBox);
+            this.groupBox1.Controls.Add(this.label29);
+            this.groupBox1.Controls.Add(this.underworldComboBox);
+            this.groupBox1.Controls.Add(this.label28);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label27);
             this.groupBox1.Location = new System.Drawing.Point(7, 7);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(254, 131);
+            this.groupBox1.Size = new System.Drawing.Size(254, 240);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sky Color";
@@ -796,6 +824,7 @@
             "Dark Peach",
             "Dark Orange",
             "Dark Chartreuse",
+            "Dark Forest Green",
             "Dark Green",
             "Dark Teal",
             "Dark Aqua",
@@ -811,6 +840,7 @@
             "Peach",
             "Orange",
             "Chartreuse",
+            "Forest Green",
             "Green",
             "Teal",
             "Aqua",
@@ -826,6 +856,7 @@
             "Light Peach",
             "Light Orange",
             "Light Chartreuse",
+            "Light Forest Green",
             "Light Green",
             "Light Teal",
             "Light Aqua",
@@ -841,16 +872,599 @@
             "Bright Peach",
             "Bright Orange",
             "Bright Chartreuse",
+            "Bright Forest Green",
             "Bright Green",
             "Bright Teal",
             "Bright Aqua",
-            "Bright Gray",
+            "Gray",
             "Black",
             "Black"});
             this.comboBox1.Location = new System.Drawing.Point(88, 20);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 1;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // underworldComboBox
+            // 
+            this.underworldComboBox.FormattingEnabled = true;
+            this.underworldComboBox.Items.AddRange(new object[] {
+            "Dark Grey",
+            "Dark Aqua Blue",
+            "Dark Sky Blue",
+            "Eva-01 Purple",
+            "Dark Magenta",
+            "Dark Pink",
+            "Dark Peach",
+            "Dark Orange",
+            "Dark Chartreuse",
+            "Dark Forest Green",
+            "Dark Green",
+            "Dark Teal",
+            "Dark Aqua",
+            "Black",
+            "Black",
+            "Black",
+            "Light Gray",
+            "Aqua Blue",
+            "Sky Blue",
+            "Purple",
+            "Magenta",
+            "Pink",
+            "Peach",
+            "Orange",
+            "Chartreuse",
+            "Forest Green",
+            "Green",
+            "Teal",
+            "Aqua",
+            "Black",
+            "Black",
+            "Black",
+            "White Gray",
+            "Light Aqua Blue",
+            "Light Sky Blue",
+            "Light Purple",
+            "Light Magenta",
+            "Light Pink",
+            "Light Peach",
+            "Light Orange",
+            "Light Chartreuse",
+            "Light Forest Green",
+            "Light Green",
+            "Light Teal",
+            "Light Aqua",
+            "Gray",
+            "Black",
+            "Black",
+            "White",
+            "Bright Aqua Blue",
+            "Bright Sky Blue",
+            "Bright Purple",
+            "Bright Magenta",
+            "Bright Pink",
+            "Bright Peach",
+            "Bright Orange",
+            "Bright Chartreuse",
+            "Bright Forest Green",
+            "Bright Green",
+            "Bright Teal",
+            "Bright Aqua",
+            "Gray",
+            "Black",
+            "Black"});
+            this.underworldComboBox.Location = new System.Drawing.Point(88, 46);
+            this.underworldComboBox.Name = "underworldComboBox";
+            this.underworldComboBox.Size = new System.Drawing.Size(121, 21);
+            this.underworldComboBox.TabIndex = 3;
+            this.underworldComboBox.SelectedIndexChanged += new System.EventHandler(this.underworldComboBox_SelectedIndexChanged);
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(6, 49);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(82, 13);
+            this.label28.TabIndex = 2;
+            this.label28.Text = "Underworld Sky";
+            // 
+            // underwaterComboBox
+            // 
+            this.underwaterComboBox.FormattingEnabled = true;
+            this.underwaterComboBox.Items.AddRange(new object[] {
+            "Dark Grey",
+            "Dark Aqua Blue",
+            "Dark Sky Blue",
+            "Eva-01 Purple",
+            "Dark Magenta",
+            "Dark Pink",
+            "Dark Peach",
+            "Dark Orange",
+            "Dark Chartreuse",
+            "Dark Forest Green",
+            "Dark Green",
+            "Dark Teal",
+            "Dark Aqua",
+            "Black",
+            "Black",
+            "Black",
+            "Light Gray",
+            "Aqua Blue",
+            "Sky Blue",
+            "Purple",
+            "Magenta",
+            "Pink",
+            "Peach",
+            "Orange",
+            "Chartreuse",
+            "Forest Green",
+            "Green",
+            "Teal",
+            "Aqua",
+            "Black",
+            "Black",
+            "Black",
+            "White Gray",
+            "Light Aqua Blue",
+            "Light Sky Blue",
+            "Light Purple",
+            "Light Magenta",
+            "Light Pink",
+            "Light Peach",
+            "Light Orange",
+            "Light Chartreuse",
+            "Light Forest Green",
+            "Light Green",
+            "Light Teal",
+            "Light Aqua",
+            "Gray",
+            "Black",
+            "Black",
+            "White",
+            "Bright Aqua Blue",
+            "Bright Sky Blue",
+            "Bright Purple",
+            "Bright Magenta",
+            "Bright Pink",
+            "Bright Peach",
+            "Bright Orange",
+            "Bright Chartreuse",
+            "Bright Forest Green",
+            "Bright Green",
+            "Bright Teal",
+            "Bright Aqua",
+            "Gray",
+            "Black",
+            "Black"});
+            this.underwaterComboBox.Location = new System.Drawing.Point(88, 71);
+            this.underwaterComboBox.Name = "underwaterComboBox";
+            this.underwaterComboBox.Size = new System.Drawing.Size(121, 21);
+            this.underwaterComboBox.TabIndex = 5;
+            this.underwaterComboBox.SelectedIndexChanged += new System.EventHandler(this.underwaterComboBox_SelectedIndexChanged);
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(6, 74);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(83, 13);
+            this.label29.TabIndex = 4;
+            this.label29.Text = "Underwater Sky";
+            // 
+            // dungeonComboBox
+            // 
+            this.dungeonComboBox.FormattingEnabled = true;
+            this.dungeonComboBox.Items.AddRange(new object[] {
+            "Dark Grey",
+            "Dark Aqua Blue",
+            "Dark Sky Blue",
+            "Eva-01 Purple",
+            "Dark Magenta",
+            "Dark Pink",
+            "Dark Peach",
+            "Dark Orange",
+            "Dark Chartreuse",
+            "Dark Forest Green",
+            "Dark Green",
+            "Dark Teal",
+            "Dark Aqua",
+            "Black",
+            "Black",
+            "Black",
+            "Light Gray",
+            "Aqua Blue",
+            "Sky Blue",
+            "Purple",
+            "Magenta",
+            "Pink",
+            "Peach",
+            "Orange",
+            "Chartreuse",
+            "Forest Green",
+            "Green",
+            "Teal",
+            "Aqua",
+            "Black",
+            "Black",
+            "Black",
+            "White Gray",
+            "Light Aqua Blue",
+            "Light Sky Blue",
+            "Light Purple",
+            "Light Magenta",
+            "Light Pink",
+            "Light Peach",
+            "Light Orange",
+            "Light Chartreuse",
+            "Light Forest Green",
+            "Light Green",
+            "Light Teal",
+            "Light Aqua",
+            "Gray",
+            "Black",
+            "Black",
+            "White",
+            "Bright Aqua Blue",
+            "Bright Sky Blue",
+            "Bright Purple",
+            "Bright Magenta",
+            "Bright Pink",
+            "Bright Peach",
+            "Bright Orange",
+            "Bright Chartreuse",
+            "Bright Forest Green",
+            "Bright Green",
+            "Bright Teal",
+            "Bright Aqua",
+            "Gray",
+            "Black",
+            "Black"});
+            this.dungeonComboBox.Location = new System.Drawing.Point(88, 96);
+            this.dungeonComboBox.Name = "dungeonComboBox";
+            this.dungeonComboBox.Size = new System.Drawing.Size(121, 21);
+            this.dungeonComboBox.TabIndex = 7;
+            this.dungeonComboBox.SelectedIndexChanged += new System.EventHandler(this.dungeonComboBox_SelectedIndexChanged);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(6, 99);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(72, 13);
+            this.label30.TabIndex = 6;
+            this.label30.Text = "Dungeon Sky";
+            // 
+            // sixthreeComboBox
+            // 
+            this.sixthreeComboBox.FormattingEnabled = true;
+            this.sixthreeComboBox.Items.AddRange(new object[] {
+            "Dark Grey",
+            "Dark Aqua Blue",
+            "Dark Sky Blue",
+            "Eva-01 Purple",
+            "Dark Magenta",
+            "Dark Pink",
+            "Dark Peach",
+            "Dark Orange",
+            "Dark Chartreuse",
+            "Dark Forest Green",
+            "Dark Green",
+            "Dark Teal",
+            "Dark Aqua",
+            "Black",
+            "Black",
+            "Black",
+            "Light Gray",
+            "Aqua Blue",
+            "Sky Blue",
+            "Purple",
+            "Magenta",
+            "Pink",
+            "Peach",
+            "Orange",
+            "Chartreuse",
+            "Forest Green",
+            "Green",
+            "Teal",
+            "Aqua",
+            "Black",
+            "Black",
+            "Black",
+            "White Gray",
+            "Light Aqua Blue",
+            "Light Sky Blue",
+            "Light Purple",
+            "Light Magenta",
+            "Light Pink",
+            "Light Peach",
+            "Light Orange",
+            "Light Chartreuse",
+            "Light Forest Green",
+            "Light Green",
+            "Light Teal",
+            "Light Aqua",
+            "Gray",
+            "Black",
+            "Black",
+            "White",
+            "Bright Aqua Blue",
+            "Bright Sky Blue",
+            "Bright Purple",
+            "Bright Magenta",
+            "Bright Pink",
+            "Bright Peach",
+            "Bright Orange",
+            "Bright Chartreuse",
+            "Bright Forest Green",
+            "Bright Green",
+            "Bright Teal",
+            "Bright Aqua",
+            "Gray",
+            "Black",
+            "Black"});
+            this.sixthreeComboBox.Location = new System.Drawing.Point(29, 194);
+            this.sixthreeComboBox.Name = "sixthreeComboBox";
+            this.sixthreeComboBox.Size = new System.Drawing.Size(119, 21);
+            this.sixthreeComboBox.TabIndex = 9;
+            this.sixthreeComboBox.SelectedIndexChanged += new System.EventHandler(this.sixthreeComboBox_SelectedIndexChanged);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(6, 197);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(22, 13);
+            this.label31.TabIndex = 8;
+            this.label31.Text = "6-3";
+            // 
+            // nighttimeComboBox
+            // 
+            this.nighttimeComboBox.FormattingEnabled = true;
+            this.nighttimeComboBox.Items.AddRange(new object[] {
+            "Dark Grey",
+            "Dark Aqua Blue",
+            "Dark Sky Blue",
+            "Eva-01 Purple",
+            "Dark Magenta",
+            "Dark Pink",
+            "Dark Peach",
+            "Dark Orange",
+            "Dark Chartreuse",
+            "Dark Forest Green",
+            "Dark Green",
+            "Dark Teal",
+            "Dark Aqua",
+            "Black",
+            "Black",
+            "Black",
+            "Light Gray",
+            "Aqua Blue",
+            "Sky Blue",
+            "Purple",
+            "Magenta",
+            "Pink",
+            "Peach",
+            "Orange",
+            "Chartreuse",
+            "Forest Green",
+            "Green",
+            "Teal",
+            "Aqua",
+            "Black",
+            "Black",
+            "Black",
+            "White Gray",
+            "Light Aqua Blue",
+            "Light Sky Blue",
+            "Light Purple",
+            "Light Magenta",
+            "Light Pink",
+            "Light Peach",
+            "Light Orange",
+            "Light Chartreuse",
+            "Light Forest Green",
+            "Light Green",
+            "Light Teal",
+            "Light Aqua",
+            "Gray",
+            "Black",
+            "Black",
+            "White",
+            "Bright Aqua Blue",
+            "Bright Sky Blue",
+            "Bright Purple",
+            "Bright Magenta",
+            "Bright Pink",
+            "Bright Peach",
+            "Bright Orange",
+            "Bright Chartreuse",
+            "Bright Forest Green",
+            "Bright Green",
+            "Bright Teal",
+            "Bright Aqua",
+            "Gray",
+            "Black",
+            "Black"});
+            this.nighttimeComboBox.Location = new System.Drawing.Point(88, 121);
+            this.nighttimeComboBox.Name = "nighttimeComboBox";
+            this.nighttimeComboBox.Size = new System.Drawing.Size(121, 21);
+            this.nighttimeComboBox.TabIndex = 11;
+            this.nighttimeComboBox.SelectedIndexChanged += new System.EventHandler(this.nighttimeComboBox_SelectedIndexChanged);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(6, 124);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(76, 13);
+            this.label32.TabIndex = 10;
+            this.label32.Text = "NightTime Sky";
+            // 
+            // winterComboBox
+            // 
+            this.winterComboBox.FormattingEnabled = true;
+            this.winterComboBox.Items.AddRange(new object[] {
+            "Dark Grey",
+            "Dark Aqua Blue",
+            "Dark Sky Blue",
+            "Eva-01 Purple",
+            "Dark Magenta",
+            "Dark Pink",
+            "Dark Peach",
+            "Dark Orange",
+            "Dark Chartreuse",
+            "Dark Forest Green",
+            "Dark Green",
+            "Dark Teal",
+            "Dark Aqua",
+            "Black",
+            "Black",
+            "Black",
+            "Light Gray",
+            "Aqua Blue",
+            "Sky Blue",
+            "Purple",
+            "Magenta",
+            "Pink",
+            "Peach",
+            "Orange",
+            "Chartreuse",
+            "Forest Green",
+            "Green",
+            "Teal",
+            "Aqua",
+            "Black",
+            "Black",
+            "Black",
+            "White Gray",
+            "Light Aqua Blue",
+            "Light Sky Blue",
+            "Light Purple",
+            "Light Magenta",
+            "Light Pink",
+            "Light Peach",
+            "Light Orange",
+            "Light Chartreuse",
+            "Light Forest Green",
+            "Light Green",
+            "Light Teal",
+            "Light Aqua",
+            "Gray",
+            "Black",
+            "Black",
+            "White",
+            "Bright Aqua Blue",
+            "Bright Sky Blue",
+            "Bright Purple",
+            "Bright Magenta",
+            "Bright Pink",
+            "Bright Peach",
+            "Bright Orange",
+            "Bright Chartreuse",
+            "Bright Forest Green",
+            "Bright Green",
+            "Bright Teal",
+            "Bright Aqua",
+            "Gray",
+            "Black",
+            "Black"});
+            this.winterComboBox.Location = new System.Drawing.Point(88, 145);
+            this.winterComboBox.Name = "winterComboBox";
+            this.winterComboBox.Size = new System.Drawing.Size(121, 21);
+            this.winterComboBox.TabIndex = 13;
+            this.winterComboBox.SelectedIndexChanged += new System.EventHandler(this.winterComboBox_SelectedIndexChanged);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(6, 148);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(59, 13);
+            this.label33.TabIndex = 12;
+            this.label33.Text = "Winter Sky";
+            // 
+            // winternightComboBox
+            // 
+            this.winternightComboBox.FormattingEnabled = true;
+            this.winternightComboBox.Items.AddRange(new object[] {
+            "Dark Grey",
+            "Dark Aqua Blue",
+            "Dark Sky Blue",
+            "Eva-01 Purple",
+            "Dark Magenta",
+            "Dark Pink",
+            "Dark Peach",
+            "Dark Orange",
+            "Dark Chartreuse",
+            "Dark Forest Green",
+            "Dark Green",
+            "Dark Teal",
+            "Dark Aqua",
+            "Black",
+            "Black",
+            "Black",
+            "Light Gray",
+            "Aqua Blue",
+            "Sky Blue",
+            "Purple",
+            "Magenta",
+            "Pink",
+            "Peach",
+            "Orange",
+            "Chartreuse",
+            "Forest Green",
+            "Green",
+            "Teal",
+            "Aqua",
+            "Black",
+            "Black",
+            "Black",
+            "White Gray",
+            "Light Aqua Blue",
+            "Light Sky Blue",
+            "Light Purple",
+            "Light Magenta",
+            "Light Pink",
+            "Light Peach",
+            "Light Orange",
+            "Light Chartreuse",
+            "Light Forest Green",
+            "Light Green",
+            "Light Teal",
+            "Light Aqua",
+            "Gray",
+            "Black",
+            "Black",
+            "White",
+            "Bright Aqua Blue",
+            "Bright Sky Blue",
+            "Bright Purple",
+            "Bright Magenta",
+            "Bright Pink",
+            "Bright Peach",
+            "Bright Orange",
+            "Bright Chartreuse",
+            "Bright Forest Green",
+            "Bright Green",
+            "Bright Teal",
+            "Bright Aqua",
+            "Gray",
+            "Black",
+            "Black"});
+            this.winternightComboBox.Location = new System.Drawing.Point(94, 169);
+            this.winternightComboBox.Name = "winternightComboBox";
+            this.winternightComboBox.Size = new System.Drawing.Size(115, 21);
+            this.winternightComboBox.TabIndex = 15;
+            this.winternightComboBox.SelectedIndexChanged += new System.EventHandler(this.winternightComboBox_SelectedIndexChanged);
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(6, 172);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(87, 13);
+            this.label34.TabIndex = 14;
+            this.label34.Text = "Winter Night Sky";
             // 
             // Form1
             // 
@@ -947,6 +1561,20 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.ComboBox winternightComboBox;
+        private System.Windows.Forms.ComboBox sixthreeComboBox;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.ComboBox winterComboBox;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.ComboBox nighttimeComboBox;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.ComboBox dungeonComboBox;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.ComboBox underwaterComboBox;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.ComboBox underworldComboBox;
+        private System.Windows.Forms.Label label28;
     }
 }
 
