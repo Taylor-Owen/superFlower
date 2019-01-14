@@ -26,6 +26,17 @@ namespace superflower
             static public int walkingJump = 0x3436;
             static public int runningJump = 0x3438;
 
+            //Sky Colors
+            static public int underwaterSky = 0x05DF; //2-2 and 7-2
+            static public int overworldSky = 0x05E0; //1-1, 1-3, 2-1, 2-3, 4-1, 4-3, 5-3, 7-3, 8-1, 8-2 and 8-3. 
+            static public int undergroundSky = 0x05E1; //1-2 and 4-2. (Also used for New Level and Game Over screens.) 
+            static public int dungeonSky = 0x05E2;
+            static public int nighttimeSky = 0x05E3;
+            static public int winterDaySky = 0x05E4;
+            static public int winterNightSky = 0x05E5;
+            static public int sixdashthreeSky = 0x05E6;
+
+
             //Text
             static public int textMario = 0x0765; //size: 0x5
             static public int textWorld = 0x076D; //size: 0x5

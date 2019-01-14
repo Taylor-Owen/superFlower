@@ -87,6 +87,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.marioNameTextbox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.runningJumpHeight)).BeginInit();
@@ -96,6 +100,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.startingLives)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.startingCoins)).BeginInit();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -124,6 +130,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Enabled = false;
             this.tabControl1.Location = new System.Drawing.Point(13, 43);
             this.tabControl1.Name = "tabControl1";
@@ -745,6 +752,106 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "MARIO";
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.groupBox1);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(327, 253);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Palettes";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.label27);
+            this.groupBox1.Location = new System.Drawing.Point(7, 7);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(254, 131);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Sky Color";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(6, 23);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(76, 13);
+            this.label27.TabIndex = 0;
+            this.label27.Text = "Overworld Sky";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Dark Grey",
+            "Dark Aqua Blue",
+            "Dark Sky Blue",
+            "Eva-01 Purple",
+            "Dark Magenta",
+            "Dark Pink",
+            "Dark Peach",
+            "Dark Orange",
+            "Dark Chartreuse",
+            "Dark Green",
+            "Dark Teal",
+            "Dark Aqua",
+            "Black",
+            "Black",
+            "Black",
+            "Light Gray",
+            "Aqua Blue",
+            "Sky Blue",
+            "Purple",
+            "Magenta",
+            "Pink",
+            "Peach",
+            "Orange",
+            "Chartreuse",
+            "Green",
+            "Teal",
+            "Aqua",
+            "Black",
+            "Black",
+            "Black",
+            "White Gray",
+            "Light Aqua Blue",
+            "Light Sky Blue",
+            "Light Purple",
+            "Light Magenta",
+            "Light Pink",
+            "Light Peach",
+            "Light Orange",
+            "Light Chartreuse",
+            "Light Green",
+            "Light Teal",
+            "Light Aqua",
+            "Gray",
+            "Black",
+            "Black",
+            "White",
+            "Bright Aqua Blue",
+            "Bright Sky Blue",
+            "Bright Purple",
+            "Bright Magenta",
+            "Bright Pink",
+            "Bright Peach",
+            "Bright Orange",
+            "Bright Chartreuse",
+            "Bright Green",
+            "Bright Teal",
+            "Bright Aqua",
+            "Bright Gray",
+            "Black",
+            "Black"});
+            this.comboBox1.Location = new System.Drawing.Point(88, 20);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 1;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -768,6 +875,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.startingCoins)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -833,6 +943,10 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox thankyoumarioTextBox;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label27;
     }
 }
 
