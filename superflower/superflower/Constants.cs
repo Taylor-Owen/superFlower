@@ -16,10 +16,13 @@ namespace superflower
             static public byte[] timerCode = { 0x20, 0x5F, 0x8F };
             static public int bubbleBranch = 0x3681; //D0 13 is normal (bne 13)
             static public byte[] bubbleCode = {0xD0, 0x13};
+            static public byte[] enableHardMode = { 0xA9, 0x01, 0xEA };
+            static public byte[] disableHardMode = { 0xAD, 0xFC, 0x07 };
 
             //Game Logic
             static public int startingLivesCount = 0x107A;
             static public int startingCoinsCount = 0x0316;
+            static public int hardModeCheck = 0x305;
 
             //Mario
             static public int standingJump = 0x3434;

@@ -148,6 +148,11 @@ namespace superflower
             else
                 stopTimerCheckbox.Checked = false;
 
+            if (HardModeApplied())
+                hardmodeCheckBox.Checked = true;
+            else
+                hardmodeCheckBox.Checked = false;
+
             //Enable last sections
             saveButton.Enabled = true;
             tabControl1.Enabled = true;
@@ -164,7 +169,22 @@ namespace superflower
         private bool StopTimerApplied()
         {
             for (int i = 0; i < 3; i++)
-                if (workingRom.data[Constants.Offsets.timerDecreaseLogic + i] != 0xEA)
+                if (workingRom.data[Constants.Offsets.timerDecreaseLogic + i] != Constants.Opcodes.NOP)
+                    return false;
+
+            return true;
+        }
+
+        /*
+        * 
+        *  Check to see if the Hard Mode ASM has been applied
+        * 
+        */
+
+        private bool HardModeApplied()
+        {
+            for (int i = 0; i < Constants.Offsets.enableHardMode.Length; i++)
+                if (workingRom.data[Constants.Offsets.hardModeCheck + i] == Constants.Offsets.disableHardMode[i])
                     return false;
 
             return true;
@@ -419,6 +439,20 @@ namespace superflower
         private void sixthreeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             workingRom.data[Constants.Offsets.sixdashthreeSky] = (byte)sixthreeComboBox.SelectedIndex;
+        }
+
+        private void hardmodeCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (hardmodeCheckBox.Checked) {
+                for (int i = 0; i < Constants.Offsets.enableHardMode.Length; i++) 
+                    workingRom.data[Constants.Offsets.hardModeCheck + i] = Constants.Offsets.enableHardMode[i];
+                
+            }
+            else if (!hardmodeCheckBox.Checked) {
+                for (int i = 0; i < Constants.Offsets.disableHardMode.Length; i++) 
+                    workingRom.data[Constants.Offsets.hardModeCheck + i] = Constants.Offsets.disableHardMode[i];
+                
+            }
         }
     }
 }
