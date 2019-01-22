@@ -28,6 +28,10 @@ namespace superflower
             static public int standingJump = 0x3434;
             static public int walkingJump = 0x3436;
             static public int runningJump = 0x3438;
+            static public int runLeftSpeed = 0x3450;
+            static public int walkLeftSpeed = 0x3451;
+            static public int runRightSpeed = 0x3453;
+            static public int walkRightSpeed = 0x3454;
 
             //Sky Colors
             static public int underwaterSky = 0x05DF; //2-2 and 7-2

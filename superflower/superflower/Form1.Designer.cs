@@ -40,6 +40,7 @@
             this.standingJumpHeight = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.hardmodeCheckBox = new System.Windows.Forms.CheckBox();
             this.BubblesCheckbox = new System.Windows.Forms.CheckBox();
             this.startingLives = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
@@ -105,7 +106,15 @@
             this.label28 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.hardmodeCheckBox = new System.Windows.Forms.CheckBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.leftRunSpeed = new System.Windows.Forms.NumericUpDown();
+            this.label36 = new System.Windows.Forms.Label();
+            this.runRightSpeed = new System.Windows.Forms.NumericUpDown();
+            this.label37 = new System.Windows.Forms.Label();
+            this.walkRightSpeed = new System.Windows.Forms.NumericUpDown();
+            this.label38 = new System.Windows.Forms.Label();
+            this.walkLeftSpeed = new System.Windows.Forms.NumericUpDown();
+            this.label39 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.runningJumpHeight)).BeginInit();
@@ -117,6 +126,10 @@
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.leftRunSpeed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.runRightSpeed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.walkRightSpeed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.walkLeftSpeed)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -150,12 +163,21 @@
             this.tabControl1.Location = new System.Drawing.Point(13, 43);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(335, 279);
+            this.tabControl1.Size = new System.Drawing.Size(335, 424);
             this.tabControl1.TabIndex = 2;
             this.tabControl1.Tag = "";
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.walkRightSpeed);
+            this.tabPage1.Controls.Add(this.label38);
+            this.tabPage1.Controls.Add(this.walkLeftSpeed);
+            this.tabPage1.Controls.Add(this.label39);
+            this.tabPage1.Controls.Add(this.runRightSpeed);
+            this.tabPage1.Controls.Add(this.label37);
+            this.tabPage1.Controls.Add(this.leftRunSpeed);
+            this.tabPage1.Controls.Add(this.label36);
+            this.tabPage1.Controls.Add(this.label35);
             this.tabPage1.Controls.Add(this.runningJumpHeight);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.walkingJumpHeight);
@@ -166,7 +188,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(327, 253);
+            this.tabPage1.Size = new System.Drawing.Size(327, 398);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Mario";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -264,10 +286,21 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(327, 253);
+            this.tabPage2.Size = new System.Drawing.Size(327, 398);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "ASM Patches";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // hardmodeCheckBox
+            // 
+            this.hardmodeCheckBox.AutoSize = true;
+            this.hardmodeCheckBox.Location = new System.Drawing.Point(7, 104);
+            this.hardmodeCheckBox.Name = "hardmodeCheckBox";
+            this.hardmodeCheckBox.Size = new System.Drawing.Size(115, 17);
+            this.hardmodeCheckBox.TabIndex = 6;
+            this.hardmodeCheckBox.Text = "Start in Hard Mode";
+            this.hardmodeCheckBox.UseVisualStyleBackColor = true;
+            this.hardmodeCheckBox.CheckedChanged += new System.EventHandler(this.hardmodeCheckBox_CheckedChanged);
             // 
             // BubblesCheckbox
             // 
@@ -383,7 +416,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(327, 253);
+            this.tabPage3.Size = new System.Drawing.Size(327, 398);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Text";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1468,16 +1501,110 @@
             this.label27.TabIndex = 0;
             this.label27.Text = "Overworld Sky";
             // 
-            // hardmodeCheckBox
+            // label35
             // 
-            this.hardmodeCheckBox.AutoSize = true;
-            this.hardmodeCheckBox.Location = new System.Drawing.Point(7, 104);
-            this.hardmodeCheckBox.Name = "hardmodeCheckBox";
-            this.hardmodeCheckBox.Size = new System.Drawing.Size(115, 17);
-            this.hardmodeCheckBox.TabIndex = 6;
-            this.hardmodeCheckBox.Text = "Start in Hard Mode";
-            this.hardmodeCheckBox.UseVisualStyleBackColor = true;
-            this.hardmodeCheckBox.CheckedChanged += new System.EventHandler(this.hardmodeCheckBox_CheckedChanged);
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(6, 149);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(228, 13);
+            this.label35.TabIndex = 7;
+            this.label35.Text = "The higher the value, the faster Mario goes. (?)";
+            // 
+            // leftRunSpeed
+            // 
+            this.leftRunSpeed.Enabled = false;
+            this.leftRunSpeed.Hexadecimal = true;
+            this.leftRunSpeed.Location = new System.Drawing.Point(121, 169);
+            this.leftRunSpeed.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.leftRunSpeed.Name = "leftRunSpeed";
+            this.leftRunSpeed.Size = new System.Drawing.Size(120, 20);
+            this.leftRunSpeed.TabIndex = 9;
+            this.leftRunSpeed.ValueChanged += new System.EventHandler(this.leftRunSpeed_ValueChanged);
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(3, 171);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(108, 13);
+            this.label36.TabIndex = 8;
+            this.label36.Text = "Running Left Velocity";
+            // 
+            // runRightSpeed
+            // 
+            this.runRightSpeed.Enabled = false;
+            this.runRightSpeed.Hexadecimal = true;
+            this.runRightSpeed.Location = new System.Drawing.Point(121, 195);
+            this.runRightSpeed.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.runRightSpeed.Name = "runRightSpeed";
+            this.runRightSpeed.Size = new System.Drawing.Size(120, 20);
+            this.runRightSpeed.TabIndex = 11;
+            this.runRightSpeed.ValueChanged += new System.EventHandler(this.runRightSpeed_ValueChanged);
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(3, 197);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(115, 13);
+            this.label37.TabIndex = 10;
+            this.label37.Text = "Running Right Velocity";
+            // 
+            // walkRightSpeed
+            // 
+            this.walkRightSpeed.Enabled = false;
+            this.walkRightSpeed.Hexadecimal = true;
+            this.walkRightSpeed.Location = new System.Drawing.Point(121, 247);
+            this.walkRightSpeed.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.walkRightSpeed.Name = "walkRightSpeed";
+            this.walkRightSpeed.Size = new System.Drawing.Size(120, 20);
+            this.walkRightSpeed.TabIndex = 15;
+            this.walkRightSpeed.ValueChanged += new System.EventHandler(this.walkRightSpeed_ValueChanged);
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(3, 249);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(114, 13);
+            this.label38.TabIndex = 14;
+            this.label38.Text = "Walking Right Velocity";
+            // 
+            // walkLeftSpeed
+            // 
+            this.walkLeftSpeed.Enabled = false;
+            this.walkLeftSpeed.Hexadecimal = true;
+            this.walkLeftSpeed.Location = new System.Drawing.Point(121, 221);
+            this.walkLeftSpeed.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.walkLeftSpeed.Name = "walkLeftSpeed";
+            this.walkLeftSpeed.Size = new System.Drawing.Size(120, 20);
+            this.walkLeftSpeed.TabIndex = 13;
+            this.walkLeftSpeed.ValueChanged += new System.EventHandler(this.walkLeftSpeed_ValueChanged);
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(3, 223);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(107, 13);
+            this.label39.TabIndex = 12;
+            this.label39.Text = "Walking Left Velocity";
             // 
             // Form1
             // 
@@ -1505,6 +1632,10 @@
             this.tabPage4.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.leftRunSpeed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.runRightSpeed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.walkRightSpeed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.walkLeftSpeed)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1589,6 +1720,15 @@
         private System.Windows.Forms.ComboBox underworldComboBox;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.CheckBox hardmodeCheckBox;
+        private System.Windows.Forms.NumericUpDown runRightSpeed;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.NumericUpDown leftRunSpeed;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.NumericUpDown walkRightSpeed;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.NumericUpDown walkLeftSpeed;
+        private System.Windows.Forms.Label label39;
     }
 }
 

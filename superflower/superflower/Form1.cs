@@ -137,6 +137,18 @@ namespace superflower
             runningJumpHeight.Value = workingRom.data[Constants.Offsets.runningJump];
             runningJumpHeight.Enabled = true;
 
+            leftRunSpeed.Value = workingRom.data[Constants.Offsets.runLeftSpeed];
+            leftRunSpeed.Enabled = true;
+
+            runRightSpeed.Value = workingRom.data[Constants.Offsets.runRightSpeed];
+            runRightSpeed.Enabled = true;
+
+            walkLeftSpeed.Value = workingRom.data[Constants.Offsets.walkLeftSpeed];
+            walkLeftSpeed.Enabled = true;
+
+            walkRightSpeed.Value = workingRom.data[Constants.Offsets.walkRightSpeed];
+            walkRightSpeed.Enabled = true;
+
             startingCoins.Value = workingRom.data[Constants.Offsets.startingCoinsCount];
             startingCoins.Enabled = true;
 
@@ -453,6 +465,26 @@ namespace superflower
                     workingRom.data[Constants.Offsets.hardModeCheck + i] = Constants.Offsets.disableHardMode[i];
                 
             }
+        }
+
+        private void leftRunSpeed_ValueChanged(object sender, EventArgs e)
+        {
+            workingRom.data[Constants.Offsets.runLeftSpeed] = (byte)leftRunSpeed.Value;
+        }
+
+        private void runRightSpeed_ValueChanged(object sender, EventArgs e)
+        {
+            workingRom.data[Constants.Offsets.runRightSpeed] = (byte)runRightSpeed.Value;
+        }
+
+        private void walkLeftSpeed_ValueChanged(object sender, EventArgs e)
+        {
+            workingRom.data[Constants.Offsets.walkLeftSpeed] = (byte)walkLeftSpeed.Value;
+        }
+
+        private void walkRightSpeed_ValueChanged(object sender, EventArgs e)
+        {
+            workingRom.data[Constants.Offsets.walkRightSpeed] = (byte)walkRightSpeed.Value;
         }
     }
 }
