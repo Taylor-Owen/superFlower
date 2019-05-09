@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace superflower
@@ -43,35 +38,34 @@ namespace superflower
          * 
          */
 
-
-        private void button1_Click(object sender, EventArgs e)
+        private void openButton_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "Super Mario Bros ROM|*.nes";
-            openFileDialog1.Title = "Select a ROM";
-
-            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            var openFileDialog1 = new OpenFileDialog
             {
-                if (workingRom.openRomCheck(openFileDialog1.FileName) == false) //Do we fail the test?
-                    MessageBox.Show("File Invalid: Unable to load");
-                else //We passed. Load it.
-                {
-                    workingRom.filePath = openFileDialog1.FileName;
-                    workingRom.fileName = openFileDialog1.SafeFileName;
-                    workingRom.romLoaded = true;
-                    workingRom.data = System.IO.File.ReadAllBytes(openFileDialog1.FileName);
+                Filter = "Super Mario Bros ROM|*.nes",
+                Title = "Select a ROM"
+            };
 
-                    this.Text = "Superflower - Loaded "+workingRom.fileName;
+            if (openFileDialog1.ShowDialog() != DialogResult.OK)
+                return;
 
-                    if (PopulateOffsets())
-                    {
-                        MessageBox.Show("ROM loaded!");
-                    }
-                }
+            if (workingRom.openRomCheck(openFileDialog1.FileName) == false)
+            {
+                MessageBox.Show("File Invalid: Unable to load");
+                return;
             }
 
+            workingRom.filePath = openFileDialog1.FileName;
+            workingRom.fileName = openFileDialog1.SafeFileName;
+            workingRom.romLoaded = true;
+            workingRom.data = System.IO.File.ReadAllBytes(openFileDialog1.FileName);
 
+            Text = $"Superflower - Loaded {workingRom.fileName}";
 
+            if (PopulateOffsets())
+            {
+                MessageBox.Show("ROM loaded!");
+            }
         }
 
         SMBRom workingRom = new SMBRom();
@@ -82,42 +76,42 @@ namespace superflower
          * 
          */
 
-        private void button2_Click(object sender, EventArgs e)
+        private void saveButton_Click(object sender, EventArgs e)
         {
-            if (!workingRom.romLoaded)
-                return;
+            if (!workingRom.romLoaded) return;
 
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.Filter = "Super Mario Bros ROM|*.nes";
-            saveFileDialog1.Title = "Select a Location";
+            var saveFileDialog1 = new SaveFileDialog
+            {
+                Filter = "Super Mario Bros ROM|*.nes",
+                Title = "Select a Location"
+            };
             saveFileDialog1.ShowDialog();
 
-            if (saveFileDialog1.FileName != "")
-            {
-                InsertTextToRom(marioNameTextbox, Constants.Offsets.textMario);
-                InsertTextToRom(worldTextBox, Constants.Offsets.textWorld);
-                InsertTextToRom(timeTextBox, Constants.Offsets.textTime);
-                InsertTextToRom(timeupTextBox, Constants.Offsets.textTimeUp);
-                InsertTextToRom(gameoverTextBox, Constants.Offsets.textGameOver);
-                InsertTextToRom(warpzoneTextBox, Constants.Offsets.textWarpZone);
-                InsertTextToRom(luigiTextBox, Constants.Offsets.textLuigi);
-                InsertTextToRom(playeroneTextBox, Constants.Offsets.textOnePlayer);
-                InsertTextToRom(playertwoTextBox, Constants.Offsets.textTwoPlayer);
-                InsertTextToRom(copyrightTextBox, Constants.Offsets.textNintendo);
-                InsertTextToRom(worldBlackScreenTextBox, Constants.Offsets.textWorld2);
-                InsertTextToRom(thankyoumarioTextBox, Constants.Offsets.textThankYouMario);
-                InsertTextToRom(thankyouluigiTextBox, Constants.Offsets.textThankYouLuigi);
-                InsertTextToRom(butprincessTextBox, Constants.Offsets.textThankYouButOurPrincess);
-                InsertTextToRom(butprincess2TextBox, Constants.Offsets.textThankYouButOurPrincess2);
-                InsertTextToRom(questTextBox, Constants.Offsets.textYourQuestIsOver);
-                InsertTextToRom(quest2TextBox, Constants.Offsets.textYourQuestIsOver2);
-                InsertTextToRom(quest3TextBox, Constants.Offsets.textYourQuestIsOver3);
-                InsertTextToRom(quest4TextBox, Constants.Offsets.textYourQuestIsOver4);
+            if (saveFileDialog1.FileName == "")
+                return;
 
+            InsertTextToRom(marioNameTextbox, Constants.Offsets.textMario);
+            InsertTextToRom(worldTextBox, Constants.Offsets.textWorld);
+            InsertTextToRom(timeTextBox, Constants.Offsets.textTime);
+            InsertTextToRom(timeupTextBox, Constants.Offsets.textTimeUp);
+            InsertTextToRom(gameoverTextBox, Constants.Offsets.textGameOver);
+            InsertTextToRom(warpzoneTextBox, Constants.Offsets.textWarpZone);
+            InsertTextToRom(luigiTextBox, Constants.Offsets.textLuigi);
+            InsertTextToRom(playeroneTextBox, Constants.Offsets.textOnePlayer);
+            InsertTextToRom(playertwoTextBox, Constants.Offsets.textTwoPlayer);
+            InsertTextToRom(copyrightTextBox, Constants.Offsets.textNintendo);
+            InsertTextToRom(worldBlackScreenTextBox, Constants.Offsets.textWorld2);
+            InsertTextToRom(thankyoumarioTextBox, Constants.Offsets.textThankYouMario);
+            InsertTextToRom(thankyouluigiTextBox, Constants.Offsets.textThankYouLuigi);
+            InsertTextToRom(butprincessTextBox, Constants.Offsets.textThankYouButOurPrincess);
+            InsertTextToRom(butprincess2TextBox, Constants.Offsets.textThankYouButOurPrincess2);
+            InsertTextToRom(questTextBox, Constants.Offsets.textYourQuestIsOver);
+            InsertTextToRom(quest2TextBox, Constants.Offsets.textYourQuestIsOver2);
+            InsertTextToRom(quest3TextBox, Constants.Offsets.textYourQuestIsOver3);
+            InsertTextToRom(quest4TextBox, Constants.Offsets.textYourQuestIsOver4);
 
-                System.IO.File.WriteAllBytes(saveFileDialog1.FileName, workingRom.data);
-                MessageBox.Show("File Saved!");
-            }
+            System.IO.File.WriteAllBytes(saveFileDialog1.FileName, workingRom.data);
+            MessageBox.Show("File Saved!");
         }
 
          /*
@@ -155,15 +149,8 @@ namespace superflower
             startingLives.Value = workingRom.data[Constants.Offsets.startingLivesCount]+1; //Game logic dictates that 0 = 1, 1 = 2.
             startingLives.Enabled = true;
 
-            if (StopTimerApplied())
-                stopTimerCheckbox.Checked = true;
-            else
-                stopTimerCheckbox.Checked = false;
-
-            if (HardModeApplied())
-                hardmodeCheckBox.Checked = true;
-            else
-                hardmodeCheckBox.Checked = false;
+            stopTimerCheckbox.Checked = StopTimerApplied();
+            hardmodeCheckBox.Checked = HardModeApplied();
 
             //Enable last sections
             saveButton.Enabled = true;
@@ -180,7 +167,7 @@ namespace superflower
 
         private bool StopTimerApplied()
         {
-            for (int i = 0; i < 3; i++)
+            for (var i = 0; i < 3; i++)
                 if (workingRom.data[Constants.Offsets.timerDecreaseLogic + i] != Constants.Opcodes.NOP)
                     return false;
 
@@ -195,7 +182,7 @@ namespace superflower
 
         private bool HardModeApplied()
         {
-            for (int i = 0; i < Constants.Offsets.enableHardMode.Length; i++)
+            for (var i = 0; i < Constants.Offsets.enableHardMode.Length; i++)
                 if (workingRom.data[Constants.Offsets.hardModeCheck + i] == Constants.Offsets.disableHardMode[i])
                     return false;
 
@@ -208,37 +195,32 @@ namespace superflower
         * 
         */
 
-        private byte[] Text2Hex(string tmp)
+        private byte[] Text2Hex(string input)
         {
-            if (tmp.Length < 1)
+            var alphabet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+
+            if (input.Length < 1)
                 return null;
 
-            string alphabet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            char[] array = alphabet.ToCharArray();
+            var result = new List<byte>();
 
-            byte[] payload = new byte[tmp.Length];
-
-            for (int i = 0; i < tmp.Length; i++)
+            foreach (var letter in input)
             {
-                if (tmp[i] == '!')
-                    payload[i] = Constants.Letters.Exclamation;
-                else if (tmp[i] == '©')
-                    payload[i] = Constants.Letters.Copyright;
-                else if (tmp[i] == '-')
-                    payload[i] = Constants.Letters.Minus;
-                else if (tmp[i] == ' ')
-                    payload[i] = Constants.Letters.Space;
-                else if (tmp[i] == '.')
-                    payload[i] = Constants.Letters.Period;
-                else if (Array.IndexOf(array, tmp[i]) != -1)
-                    payload[i] = (byte)(Array.IndexOf(array, tmp[i]));
+                if (alphabet.Contains(letter))
+                    result.Add((byte)Array.IndexOf(alphabet, letter));
+                else if (letter == '!')
+                    result.Add(Constants.Letters.Exclamation);
+                else if (letter == '©')
+                    result.Add(Constants.Letters.Copyright);
+                else if (letter == '-')
+                    result.Add(Constants.Letters.Minus);
+                else if (letter == '.')
+                    result.Add(Constants.Letters.Period);
                 else
-                    payload[i] = Constants.Letters.Space;
-
-
+                    result.Add(Constants.Letters.Space);
             }
-                
-            return payload;
+
+            return result.ToArray();
         }
 
         /*
@@ -254,15 +236,13 @@ namespace superflower
             return tmp;
         }
 
-        private void InsertTextToRom(TextBox text, int offset)
+        private void InsertTextToRom(Control text, int offset)
         {
             if ((string)text.Tag == text.Text)
                 return;
 
-            byte[] tempBytes = { };
-
-            tempBytes = Text2Hex(text.Text);
-            for (int i = 0; i < tempBytes.Length; i++)
+            var tempBytes = Text2Hex(text.Text);
+            for (var i = 0; i < tempBytes.Length; i++)
                 workingRom.data[offset + i] = tempBytes[i];
         }
 
@@ -286,12 +266,12 @@ namespace superflower
         {
             if (stopTimerCheckbox.Checked)
             {
-                for (int i=0;i<Constants.Offsets.timerCode.Length;i++)
-                    workingRom.data[Constants.Offsets.timerDecreaseLogic+i] = Constants.Opcodes.NOP;
+                for (var i = 0; i<Constants.Offsets.timerCode.Length; i++)
+                    workingRom.data[Constants.Offsets.timerDecreaseLogic + i] = Constants.Opcodes.NOP;
             }
             else if (!stopTimerCheckbox.Checked)
             {
-                for (int i = 0; i < Constants.Offsets.timerCode.Length; i++)
+                for (var i = 0; i < Constants.Offsets.timerCode.Length; i++)
                     workingRom.data[Constants.Offsets.timerDecreaseLogic + i] = Constants.Offsets.timerCode[i];
             }
         }
@@ -308,7 +288,6 @@ namespace superflower
 
         private void marioNameTextbox_KeyPress(object sender, KeyPressEventArgs e)
         {
-
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
 
@@ -321,12 +300,12 @@ namespace superflower
         {
             if (BubblesCheckbox.Checked)
             {
-                for (int i = 0; i < Constants.Offsets.bubbleCode.Length; i++)
+                for (var i = 0; i < Constants.Offsets.bubbleCode.Length; i++)
                     workingRom.data[Constants.Offsets.bubbleBranch + i] = Constants.Opcodes.NOP;
             }
             else if (!BubblesCheckbox.Checked)
             {
-                for (int i=0; i < Constants.Offsets.bubbleCode.Length; i++)
+                for (var i=0; i < Constants.Offsets.bubbleCode.Length; i++)
                     workingRom.data[Constants.Offsets.bubbleBranch + i] = Constants.Offsets.bubbleCode[i];
             }
         }
@@ -413,57 +392,57 @@ namespace superflower
             quest4TextBox.Text = PrepareText(quest4TextBox.Text);
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboOverworldSkyColor_SelectedIndexChanged(object sender, EventArgs e)
         {
-                workingRom.data[Constants.Offsets.overworldSky] = (byte)comboBox1.SelectedIndex;
+                workingRom.data[Constants.Offsets.overworldSky] = (byte)cboOverworldSkyColor.SelectedIndex;
         }
 
-        private void underworldComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboUnderworldSkyColor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            workingRom.data[Constants.Offsets.undergroundSky] = (byte)underworldComboBox.SelectedIndex;
+            workingRom.data[Constants.Offsets.undergroundSky] = (byte)cboUnderworldSkyColor.SelectedIndex;
         }
 
-        private void underwaterComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboUnderwaterSkyColor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            workingRom.data[Constants.Offsets.underwaterSky] = (byte)underwaterComboBox.SelectedIndex;
+            workingRom.data[Constants.Offsets.underwaterSky] = (byte)cboUnderwaterSkyColor.SelectedIndex;
         }
 
-        private void dungeonComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboDungeonSkyColor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            workingRom.data[Constants.Offsets.dungeonSky] = (byte)dungeonComboBox.SelectedIndex;
+            workingRom.data[Constants.Offsets.dungeonSky] = (byte)cboDungeonSkyColor.SelectedIndex;
         }
 
-        private void nighttimeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboNighttimeSkyColor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            workingRom.data[Constants.Offsets.nighttimeSky] = (byte)nighttimeComboBox.SelectedIndex;
+            workingRom.data[Constants.Offsets.nighttimeSky] = (byte)cboNighttimeSkyColor.SelectedIndex;
         }
 
-        private void winterComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboWinterSkyColor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            workingRom.data[Constants.Offsets.winterDaySky] = (byte)winterComboBox.SelectedIndex;
+            workingRom.data[Constants.Offsets.winterDaySky] = (byte)cboWinterSkyColor.SelectedIndex;
         }
 
-        private void winternightComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboWinterNightSkyColor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            workingRom.data[Constants.Offsets.winterNightSky] = (byte)winternightComboBox.SelectedIndex;
+            workingRom.data[Constants.Offsets.winterNightSky] = (byte)cboWinterNightSkyColor.SelectedIndex;
         }
 
-        private void sixthreeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboSixThree_SelectedIndexChanged(object sender, EventArgs e)
         {
-            workingRom.data[Constants.Offsets.sixdashthreeSky] = (byte)sixthreeComboBox.SelectedIndex;
+            workingRom.data[Constants.Offsets.sixdashthreeSky] = (byte)cboSixThree.SelectedIndex;
         }
 
         private void hardmodeCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (hardmodeCheckBox.Checked) {
-                for (int i = 0; i < Constants.Offsets.enableHardMode.Length; i++) 
+            if (hardmodeCheckBox.Checked)
+            {
+                for (var i = 0; i < Constants.Offsets.enableHardMode.Length; i++)
                     workingRom.data[Constants.Offsets.hardModeCheck + i] = Constants.Offsets.enableHardMode[i];
-                
             }
-            else if (!hardmodeCheckBox.Checked) {
-                for (int i = 0; i < Constants.Offsets.disableHardMode.Length; i++) 
+            else
+            {
+                for (var i = 0; i < Constants.Offsets.disableHardMode.Length; i++)
                     workingRom.data[Constants.Offsets.hardModeCheck + i] = Constants.Offsets.disableHardMode[i];
-                
             }
         }
 

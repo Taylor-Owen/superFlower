@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
-
-namespace superflower
+﻿namespace superflower
 {
     class SMBRom
     {
@@ -17,11 +9,8 @@ namespace superflower
 
         public bool openRomCheck(string path)
         {
-            long length = new System.IO.FileInfo(path).Length;
-            if (length != Constants.SMB_Filesize1)
-                return false;
-
-            return true;
+            var length = new System.IO.FileInfo(path).Length;
+            return length == Constants.SMB_Filesize1;
         }
     }
 }

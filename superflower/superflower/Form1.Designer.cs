@@ -28,10 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.openButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.walkRightSpeed = new System.Windows.Forms.NumericUpDown();
+            this.label38 = new System.Windows.Forms.Label();
+            this.walkLeftSpeed = new System.Windows.Forms.NumericUpDown();
+            this.label39 = new System.Windows.Forms.Label();
+            this.runRightSpeed = new System.Windows.Forms.NumericUpDown();
+            this.label37 = new System.Windows.Forms.Label();
+            this.leftRunSpeed = new System.Windows.Forms.NumericUpDown();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
             this.runningJumpHeight = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.walkingJumpHeight = new System.Windows.Forms.NumericUpDown();
@@ -90,33 +99,28 @@
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.winternightComboBox = new System.Windows.Forms.ComboBox();
-            this.sixthreeComboBox = new System.Windows.Forms.ComboBox();
+            this.cboWinterNightSkyColor = new System.Windows.Forms.ComboBox();
+            this.cboSixThree = new System.Windows.Forms.ComboBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
-            this.winterComboBox = new System.Windows.Forms.ComboBox();
+            this.cboWinterSkyColor = new System.Windows.Forms.ComboBox();
             this.label33 = new System.Windows.Forms.Label();
-            this.nighttimeComboBox = new System.Windows.Forms.ComboBox();
+            this.cboNighttimeSkyColor = new System.Windows.Forms.ComboBox();
             this.label32 = new System.Windows.Forms.Label();
-            this.dungeonComboBox = new System.Windows.Forms.ComboBox();
+            this.cboDungeonSkyColor = new System.Windows.Forms.ComboBox();
             this.label30 = new System.Windows.Forms.Label();
-            this.underwaterComboBox = new System.Windows.Forms.ComboBox();
+            this.cboUnderwaterSkyColor = new System.Windows.Forms.ComboBox();
             this.label29 = new System.Windows.Forms.Label();
-            this.underworldComboBox = new System.Windows.Forms.ComboBox();
+            this.cboUnderworldSkyColor = new System.Windows.Forms.ComboBox();
             this.label28 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboOverworldSkyColor = new System.Windows.Forms.ComboBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.leftRunSpeed = new System.Windows.Forms.NumericUpDown();
-            this.label36 = new System.Windows.Forms.Label();
-            this.runRightSpeed = new System.Windows.Forms.NumericUpDown();
-            this.label37 = new System.Windows.Forms.Label();
-            this.walkRightSpeed = new System.Windows.Forms.NumericUpDown();
-            this.label38 = new System.Windows.Forms.Label();
-            this.walkLeftSpeed = new System.Windows.Forms.NumericUpDown();
-            this.label39 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.walkRightSpeed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.walkLeftSpeed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.runRightSpeed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.leftRunSpeed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.runningJumpHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.walkingJumpHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.standingJumpHeight)).BeginInit();
@@ -126,21 +130,17 @@
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.leftRunSpeed)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.runRightSpeed)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.walkRightSpeed)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.walkLeftSpeed)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // openButton
             // 
-            this.button1.Location = new System.Drawing.Point(13, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Open SMB Rom...";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.openButton.Location = new System.Drawing.Point(13, 13);
+            this.openButton.Name = "openButton";
+            this.openButton.Size = new System.Drawing.Size(115, 23);
+            this.openButton.TabIndex = 0;
+            this.openButton.Text = "Open SMB Rom...";
+            this.openButton.UseVisualStyleBackColor = true;
+            this.openButton.Click += new System.EventHandler(this.openButton_Click);
             // 
             // saveButton
             // 
@@ -151,19 +151,22 @@
             this.saveButton.TabIndex = 1;
             this.saveButton.Text = "Save Changes...";
             this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.button2_Click);
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Enabled = false;
-            this.tabControl1.Location = new System.Drawing.Point(13, 43);
+            this.tabControl1.Location = new System.Drawing.Point(13, 42);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(335, 424);
+            this.tabControl1.Size = new System.Drawing.Size(396, 541);
             this.tabControl1.TabIndex = 2;
             this.tabControl1.Tag = "";
             // 
@@ -188,30 +191,135 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(327, 398);
+            this.tabPage1.Size = new System.Drawing.Size(388, 515);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Mario";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // walkRightSpeed
+            // 
+            this.walkRightSpeed.Enabled = false;
+            this.walkRightSpeed.Hexadecimal = true;
+            this.walkRightSpeed.Location = new System.Drawing.Point(123, 211);
+            this.walkRightSpeed.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.walkRightSpeed.Name = "walkRightSpeed";
+            this.walkRightSpeed.Size = new System.Drawing.Size(48, 20);
+            this.walkRightSpeed.TabIndex = 9;
+            this.walkRightSpeed.ValueChanged += new System.EventHandler(this.walkRightSpeed_ValueChanged);
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(6, 213);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(114, 13);
+            this.label38.TabIndex = 14;
+            this.label38.Text = "Walking Right Velocity";
+            // 
+            // walkLeftSpeed
+            // 
+            this.walkLeftSpeed.Enabled = false;
+            this.walkLeftSpeed.Hexadecimal = true;
+            this.walkLeftSpeed.Location = new System.Drawing.Point(123, 185);
+            this.walkLeftSpeed.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.walkLeftSpeed.Name = "walkLeftSpeed";
+            this.walkLeftSpeed.Size = new System.Drawing.Size(48, 20);
+            this.walkLeftSpeed.TabIndex = 8;
+            this.walkLeftSpeed.ValueChanged += new System.EventHandler(this.walkLeftSpeed_ValueChanged);
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(6, 187);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(107, 13);
+            this.label39.TabIndex = 12;
+            this.label39.Text = "Walking Left Velocity";
+            // 
+            // runRightSpeed
+            // 
+            this.runRightSpeed.Enabled = false;
+            this.runRightSpeed.Hexadecimal = true;
+            this.runRightSpeed.Location = new System.Drawing.Point(123, 159);
+            this.runRightSpeed.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.runRightSpeed.Name = "runRightSpeed";
+            this.runRightSpeed.Size = new System.Drawing.Size(48, 20);
+            this.runRightSpeed.TabIndex = 7;
+            this.runRightSpeed.ValueChanged += new System.EventHandler(this.runRightSpeed_ValueChanged);
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(6, 161);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(115, 13);
+            this.label37.TabIndex = 10;
+            this.label37.Text = "Running Right Velocity";
+            // 
+            // leftRunSpeed
+            // 
+            this.leftRunSpeed.Enabled = false;
+            this.leftRunSpeed.Hexadecimal = true;
+            this.leftRunSpeed.Location = new System.Drawing.Point(123, 133);
+            this.leftRunSpeed.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.leftRunSpeed.Name = "leftRunSpeed";
+            this.leftRunSpeed.Size = new System.Drawing.Size(48, 20);
+            this.leftRunSpeed.TabIndex = 6;
+            this.leftRunSpeed.ValueChanged += new System.EventHandler(this.leftRunSpeed_ValueChanged);
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(6, 135);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(108, 13);
+            this.label36.TabIndex = 8;
+            this.label36.Text = "Running Left Velocity";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(3, 117);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(228, 13);
+            this.label35.TabIndex = 7;
+            this.label35.Text = "The higher the value, the faster Mario goes. (?)";
             // 
             // runningJumpHeight
             // 
             this.runningJumpHeight.Enabled = false;
             this.runningJumpHeight.Hexadecimal = true;
-            this.runningJumpHeight.Location = new System.Drawing.Point(121, 109);
+            this.runningJumpHeight.Location = new System.Drawing.Point(123, 75);
             this.runningJumpHeight.Maximum = new decimal(new int[] {
             255,
             0,
             0,
             0});
             this.runningJumpHeight.Name = "runningJumpHeight";
-            this.runningJumpHeight.Size = new System.Drawing.Size(120, 20);
-            this.runningJumpHeight.TabIndex = 6;
+            this.runningJumpHeight.Size = new System.Drawing.Size(48, 20);
+            this.runningJumpHeight.TabIndex = 5;
             this.runningJumpHeight.ValueChanged += new System.EventHandler(this.runningJumpHeight_ValueChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 111);
+            this.label4.Location = new System.Drawing.Point(6, 77);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(109, 13);
             this.label4.TabIndex = 5;
@@ -221,21 +329,21 @@
             // 
             this.walkingJumpHeight.Enabled = false;
             this.walkingJumpHeight.Hexadecimal = true;
-            this.walkingJumpHeight.Location = new System.Drawing.Point(121, 72);
+            this.walkingJumpHeight.Location = new System.Drawing.Point(123, 49);
             this.walkingJumpHeight.Maximum = new decimal(new int[] {
             255,
             0,
             0,
             0});
             this.walkingJumpHeight.Name = "walkingJumpHeight";
-            this.walkingJumpHeight.Size = new System.Drawing.Size(120, 20);
+            this.walkingJumpHeight.Size = new System.Drawing.Size(48, 20);
             this.walkingJumpHeight.TabIndex = 4;
             this.walkingJumpHeight.ValueChanged += new System.EventHandler(this.walkingJumpHeight_ValueChanged_1);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 74);
+            this.label3.Location = new System.Drawing.Point(6, 51);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 13);
             this.label3.TabIndex = 3;
@@ -254,21 +362,21 @@
             // 
             this.standingJumpHeight.Enabled = false;
             this.standingJumpHeight.Hexadecimal = true;
-            this.standingJumpHeight.Location = new System.Drawing.Point(121, 36);
+            this.standingJumpHeight.Location = new System.Drawing.Point(123, 23);
             this.standingJumpHeight.Maximum = new decimal(new int[] {
             255,
             0,
             0,
             0});
             this.standingJumpHeight.Name = "standingJumpHeight";
-            this.standingJumpHeight.Size = new System.Drawing.Size(120, 20);
-            this.standingJumpHeight.TabIndex = 1;
+            this.standingJumpHeight.Size = new System.Drawing.Size(48, 20);
+            this.standingJumpHeight.TabIndex = 3;
             this.standingJumpHeight.ValueChanged += new System.EventHandler(this.standingJumpHeight_ValueChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 38);
+            this.label1.Location = new System.Drawing.Point(6, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 13);
             this.label1.TabIndex = 0;
@@ -286,7 +394,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(327, 398);
+            this.tabPage2.Size = new System.Drawing.Size(388, 515);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "ASM Patches";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -297,7 +405,7 @@
             this.hardmodeCheckBox.Location = new System.Drawing.Point(7, 104);
             this.hardmodeCheckBox.Name = "hardmodeCheckBox";
             this.hardmodeCheckBox.Size = new System.Drawing.Size(115, 17);
-            this.hardmodeCheckBox.TabIndex = 6;
+            this.hardmodeCheckBox.TabIndex = 14;
             this.hardmodeCheckBox.Text = "Start in Hard Mode";
             this.hardmodeCheckBox.UseVisualStyleBackColor = true;
             this.hardmodeCheckBox.CheckedChanged += new System.EventHandler(this.hardmodeCheckBox_CheckedChanged);
@@ -308,7 +416,7 @@
             this.BubblesCheckbox.Location = new System.Drawing.Point(7, 81);
             this.BubblesCheckbox.Name = "BubblesCheckbox";
             this.BubblesCheckbox.Size = new System.Drawing.Size(114, 17);
-            this.BubblesCheckbox.TabIndex = 5;
+            this.BubblesCheckbox.TabIndex = 13;
             this.BubblesCheckbox.Text = "Bubbles Anywhere";
             this.BubblesCheckbox.UseVisualStyleBackColor = true;
             this.BubblesCheckbox.CheckedChanged += new System.EventHandler(this.BubblesCheckbox_CheckedChanged);
@@ -324,7 +432,7 @@
             0});
             this.startingLives.Name = "startingLives";
             this.startingLives.Size = new System.Drawing.Size(33, 20);
-            this.startingLives.TabIndex = 4;
+            this.startingLives.TabIndex = 12;
             this.startingLives.ValueChanged += new System.EventHandler(this.startingLives_ValueChanged);
             // 
             // label6
@@ -347,7 +455,7 @@
             0});
             this.startingCoins.Name = "startingCoins";
             this.startingCoins.Size = new System.Drawing.Size(33, 20);
-            this.startingCoins.TabIndex = 2;
+            this.startingCoins.TabIndex = 11;
             this.startingCoins.ValueChanged += new System.EventHandler(this.startingCoins_ValueChanged);
             // 
             // label5
@@ -365,7 +473,7 @@
             this.stopTimerCheckbox.Location = new System.Drawing.Point(7, 7);
             this.stopTimerCheckbox.Name = "stopTimerCheckbox";
             this.stopTimerCheckbox.Size = new System.Drawing.Size(77, 17);
-            this.stopTimerCheckbox.TabIndex = 0;
+            this.stopTimerCheckbox.TabIndex = 10;
             this.stopTimerCheckbox.Text = "Stop Timer";
             this.stopTimerCheckbox.UseVisualStyleBackColor = true;
             this.stopTimerCheckbox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
@@ -416,7 +524,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(327, 398);
+            this.tabPage3.Size = new System.Drawing.Size(388, 515);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Text";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -427,7 +535,7 @@
             this.quest3TextBox.MaxLength = 13;
             this.quest3TextBox.Name = "quest3TextBox";
             this.quest3TextBox.Size = new System.Drawing.Size(100, 20);
-            this.quest3TextBox.TabIndex = 39;
+            this.quest3TextBox.TabIndex = 33;
             this.quest3TextBox.Tag = "PUSH BUTTON B";
             this.quest3TextBox.Text = "PUSH BUTTON B";
             // 
@@ -445,8 +553,8 @@
             this.quest2TextBox.Location = new System.Drawing.Point(197, 430);
             this.quest2TextBox.MaxLength = 27;
             this.quest2TextBox.Name = "quest2TextBox";
-            this.quest2TextBox.Size = new System.Drawing.Size(100, 20);
-            this.quest2TextBox.TabIndex = 37;
+            this.quest2TextBox.Size = new System.Drawing.Size(185, 20);
+            this.quest2TextBox.TabIndex = 32;
             this.quest2TextBox.Tag = "WE PRESENT YOU A NEW QUEST.";
             this.quest2TextBox.Text = "WE PRESENT YOU A NEW QUEST.";
             // 
@@ -464,8 +572,8 @@
             this.questTextBox.Location = new System.Drawing.Point(135, 404);
             this.questTextBox.MaxLength = 19;
             this.questTextBox.Name = "questTextBox";
-            this.questTextBox.Size = new System.Drawing.Size(100, 20);
-            this.questTextBox.TabIndex = 35;
+            this.questTextBox.Size = new System.Drawing.Size(126, 20);
+            this.questTextBox.TabIndex = 31;
             this.questTextBox.Tag = "YOUR QUEST IS OVER.";
             this.questTextBox.Text = "YOUR QUEST IS OVER.";
             // 
@@ -483,8 +591,8 @@
             this.quest4TextBox.Location = new System.Drawing.Point(130, 479);
             this.quest4TextBox.MaxLength = 17;
             this.quest4TextBox.Name = "quest4TextBox";
-            this.quest4TextBox.Size = new System.Drawing.Size(100, 20);
-            this.quest4TextBox.TabIndex = 33;
+            this.quest4TextBox.Size = new System.Drawing.Size(131, 20);
+            this.quest4TextBox.TabIndex = 34;
             this.quest4TextBox.Tag = "TO SELECT A WORLD";
             this.quest4TextBox.Text = "TO SELECT A WORLD";
             // 
@@ -502,8 +610,8 @@
             this.butprincessTextBox.Location = new System.Drawing.Point(150, 356);
             this.butprincessTextBox.MaxLength = 22;
             this.butprincessTextBox.Name = "butprincessTextBox";
-            this.butprincessTextBox.Size = new System.Drawing.Size(100, 20);
-            this.butprincessTextBox.TabIndex = 31;
+            this.butprincessTextBox.Size = new System.Drawing.Size(147, 20);
+            this.butprincessTextBox.TabIndex = 29;
             this.butprincessTextBox.Tag = "BUT OUR PRINCESS IS IN";
             this.butprincessTextBox.Text = "BUT OUR PRINCESS IS IN";
             // 
@@ -521,8 +629,8 @@
             this.thankyouluigiTextBox.Location = new System.Drawing.Point(114, 330);
             this.thankyouluigiTextBox.MaxLength = 16;
             this.thankyouluigiTextBox.Name = "thankyouluigiTextBox";
-            this.thankyouluigiTextBox.Size = new System.Drawing.Size(100, 20);
-            this.thankyouluigiTextBox.TabIndex = 29;
+            this.thankyouluigiTextBox.Size = new System.Drawing.Size(127, 20);
+            this.thankyouluigiTextBox.TabIndex = 28;
             this.thankyouluigiTextBox.Tag = "THANK YOU LUIGI!";
             this.thankyouluigiTextBox.Text = "THANK YOU LUIGI!";
             // 
@@ -540,7 +648,7 @@
             this.thankyoumarioTextBox.Location = new System.Drawing.Point(118, 305);
             this.thankyoumarioTextBox.MaxLength = 16;
             this.thankyoumarioTextBox.Name = "thankyoumarioTextBox";
-            this.thankyoumarioTextBox.Size = new System.Drawing.Size(100, 20);
+            this.thankyoumarioTextBox.Size = new System.Drawing.Size(123, 20);
             this.thankyoumarioTextBox.TabIndex = 27;
             this.thankyoumarioTextBox.Tag = "THANK YOU MARIO!";
             this.thankyoumarioTextBox.Text = "THANK YOU MARIO!";
@@ -559,8 +667,8 @@
             this.butprincess2TextBox.Location = new System.Drawing.Point(114, 382);
             this.butprincess2TextBox.MaxLength = 15;
             this.butprincess2TextBox.Name = "butprincess2TextBox";
-            this.butprincess2TextBox.Size = new System.Drawing.Size(100, 20);
-            this.butprincess2TextBox.TabIndex = 25;
+            this.butprincess2TextBox.Size = new System.Drawing.Size(116, 20);
+            this.butprincess2TextBox.TabIndex = 30;
             this.butprincess2TextBox.Tag = "ANOTHER CASTLE!";
             this.butprincess2TextBox.Text = "ANOTHER CASTLE!";
             // 
@@ -569,8 +677,8 @@
             this.topTextBox.Location = new System.Drawing.Point(45, 265);
             this.topTextBox.MaxLength = 4;
             this.topTextBox.Name = "topTextBox";
-            this.topTextBox.Size = new System.Drawing.Size(100, 20);
-            this.topTextBox.TabIndex = 23;
+            this.topTextBox.Size = new System.Drawing.Size(45, 20);
+            this.topTextBox.TabIndex = 25;
             this.topTextBox.Tag = "TOP-";
             this.topTextBox.Text = "TOP-";
             // 
@@ -598,7 +706,7 @@
             this.playertwoTextBox.MaxLength = 13;
             this.playertwoTextBox.Name = "playertwoTextBox";
             this.playertwoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.playertwoTextBox.TabIndex = 21;
+            this.playertwoTextBox.TabIndex = 24;
             this.playertwoTextBox.Tag = "2 PLAYER GAME";
             this.playertwoTextBox.Text = "2 PLAYER GAME";
             // 
@@ -617,7 +725,7 @@
             this.playeroneTextBox.MaxLength = 13;
             this.playeroneTextBox.Name = "playeroneTextBox";
             this.playeroneTextBox.Size = new System.Drawing.Size(100, 20);
-            this.playeroneTextBox.TabIndex = 19;
+            this.playeroneTextBox.TabIndex = 23;
             this.playeroneTextBox.Tag = "1 PLAYER GAME";
             this.playeroneTextBox.Text = "1 PLAYER GAME";
             // 
@@ -636,7 +744,7 @@
             this.copyrightTextBox.MaxLength = 14;
             this.copyrightTextBox.Name = "copyrightTextBox";
             this.copyrightTextBox.Size = new System.Drawing.Size(100, 20);
-            this.copyrightTextBox.TabIndex = 17;
+            this.copyrightTextBox.TabIndex = 22;
             this.copyrightTextBox.Tag = "©1985 NINTENDO";
             this.copyrightTextBox.Text = "©1985 NINTENDO";
             // 
@@ -654,8 +762,8 @@
             this.luigiTextBox.Location = new System.Drawing.Point(48, 163);
             this.luigiTextBox.MaxLength = 5;
             this.luigiTextBox.Name = "luigiTextBox";
-            this.luigiTextBox.Size = new System.Drawing.Size(100, 20);
-            this.luigiTextBox.TabIndex = 15;
+            this.luigiTextBox.Size = new System.Drawing.Size(51, 20);
+            this.luigiTextBox.TabIndex = 21;
             this.luigiTextBox.Tag = "LUIGI";
             this.luigiTextBox.Text = "LUIGI";
             // 
@@ -673,8 +781,8 @@
             this.warpzoneTextBox.Location = new System.Drawing.Point(183, 138);
             this.warpzoneTextBox.MaxLength = 21;
             this.warpzoneTextBox.Name = "warpzoneTextBox";
-            this.warpzoneTextBox.Size = new System.Drawing.Size(100, 20);
-            this.warpzoneTextBox.TabIndex = 13;
+            this.warpzoneTextBox.Size = new System.Drawing.Size(163, 20);
+            this.warpzoneTextBox.TabIndex = 20;
             this.warpzoneTextBox.Tag = "WELCOME TO WARP ZONE!";
             this.warpzoneTextBox.Text = "WELCOME TO WARP ZONE!";
             // 
@@ -692,8 +800,8 @@
             this.gameoverTextBox.Location = new System.Drawing.Point(79, 111);
             this.gameoverTextBox.MaxLength = 9;
             this.gameoverTextBox.Name = "gameoverTextBox";
-            this.gameoverTextBox.Size = new System.Drawing.Size(100, 20);
-            this.gameoverTextBox.TabIndex = 11;
+            this.gameoverTextBox.Size = new System.Drawing.Size(84, 20);
+            this.gameoverTextBox.TabIndex = 19;
             this.gameoverTextBox.Tag = "GAME OVER";
             this.gameoverTextBox.Text = "GAME OVER";
             // 
@@ -711,8 +819,8 @@
             this.timeupTextBox.Location = new System.Drawing.Point(56, 85);
             this.timeupTextBox.MaxLength = 7;
             this.timeupTextBox.Name = "timeupTextBox";
-            this.timeupTextBox.Size = new System.Drawing.Size(100, 20);
-            this.timeupTextBox.TabIndex = 9;
+            this.timeupTextBox.Size = new System.Drawing.Size(68, 20);
+            this.timeupTextBox.TabIndex = 18;
             this.timeupTextBox.Tag = "TIME UP";
             this.timeupTextBox.Text = "TIME UP";
             // 
@@ -731,7 +839,7 @@
             this.worldBlackScreenTextBox.MaxLength = 5;
             this.worldBlackScreenTextBox.Name = "worldBlackScreenTextBox";
             this.worldBlackScreenTextBox.Size = new System.Drawing.Size(100, 20);
-            this.worldBlackScreenTextBox.TabIndex = 7;
+            this.worldBlackScreenTextBox.TabIndex = 26;
             this.worldBlackScreenTextBox.Tag = "WORLD";
             this.worldBlackScreenTextBox.Text = "WORLD";
             // 
@@ -749,8 +857,8 @@
             this.timeTextBox.Location = new System.Drawing.Point(56, 59);
             this.timeTextBox.MaxLength = 4;
             this.timeTextBox.Name = "timeTextBox";
-            this.timeTextBox.Size = new System.Drawing.Size(100, 20);
-            this.timeTextBox.TabIndex = 5;
+            this.timeTextBox.Size = new System.Drawing.Size(68, 20);
+            this.timeTextBox.TabIndex = 17;
             this.timeTextBox.Tag = "TIME";
             this.timeTextBox.Text = "TIME";
             // 
@@ -768,8 +876,8 @@
             this.worldTextBox.Location = new System.Drawing.Point(56, 33);
             this.worldTextBox.MaxLength = 5;
             this.worldTextBox.Name = "worldTextBox";
-            this.worldTextBox.Size = new System.Drawing.Size(100, 20);
-            this.worldTextBox.TabIndex = 3;
+            this.worldTextBox.Size = new System.Drawing.Size(68, 20);
+            this.worldTextBox.TabIndex = 16;
             this.worldTextBox.Tag = "WORLD";
             this.worldTextBox.Text = "WORLD";
             // 
@@ -787,8 +895,8 @@
             this.marioNameTextbox.Location = new System.Drawing.Point(56, 7);
             this.marioNameTextbox.MaxLength = 5;
             this.marioNameTextbox.Name = "marioNameTextbox";
-            this.marioNameTextbox.Size = new System.Drawing.Size(100, 20);
-            this.marioNameTextbox.TabIndex = 1;
+            this.marioNameTextbox.Size = new System.Drawing.Size(68, 20);
+            this.marioNameTextbox.TabIndex = 15;
             this.marioNameTextbox.Tag = "MARIO";
             this.marioNameTextbox.Text = "MARIO";
             // 
@@ -807,28 +915,28 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(327, 253);
+            this.tabPage4.Size = new System.Drawing.Size(388, 515);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Palettes";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.winternightComboBox);
-            this.groupBox1.Controls.Add(this.sixthreeComboBox);
+            this.groupBox1.Controls.Add(this.cboWinterNightSkyColor);
+            this.groupBox1.Controls.Add(this.cboSixThree);
             this.groupBox1.Controls.Add(this.label31);
             this.groupBox1.Controls.Add(this.label34);
-            this.groupBox1.Controls.Add(this.winterComboBox);
+            this.groupBox1.Controls.Add(this.cboWinterSkyColor);
             this.groupBox1.Controls.Add(this.label33);
-            this.groupBox1.Controls.Add(this.nighttimeComboBox);
+            this.groupBox1.Controls.Add(this.cboNighttimeSkyColor);
             this.groupBox1.Controls.Add(this.label32);
-            this.groupBox1.Controls.Add(this.dungeonComboBox);
+            this.groupBox1.Controls.Add(this.cboDungeonSkyColor);
             this.groupBox1.Controls.Add(this.label30);
-            this.groupBox1.Controls.Add(this.underwaterComboBox);
+            this.groupBox1.Controls.Add(this.cboUnderwaterSkyColor);
             this.groupBox1.Controls.Add(this.label29);
-            this.groupBox1.Controls.Add(this.underworldComboBox);
+            this.groupBox1.Controls.Add(this.cboUnderworldSkyColor);
             this.groupBox1.Controls.Add(this.label28);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cboOverworldSkyColor);
             this.groupBox1.Controls.Add(this.label27);
             this.groupBox1.Location = new System.Drawing.Point(7, 7);
             this.groupBox1.Name = "groupBox1";
@@ -837,10 +945,10 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sky Color";
             // 
-            // winternightComboBox
+            // cboWinterNightSkyColor
             // 
-            this.winternightComboBox.FormattingEnabled = true;
-            this.winternightComboBox.Items.AddRange(new object[] {
+            this.cboWinterNightSkyColor.FormattingEnabled = true;
+            this.cboWinterNightSkyColor.Items.AddRange(new object[] {
             "Dark Grey",
             "Dark Aqua Blue",
             "Dark Sky Blue",
@@ -905,16 +1013,16 @@
             "Gray",
             "Black",
             "Black"});
-            this.winternightComboBox.Location = new System.Drawing.Point(94, 169);
-            this.winternightComboBox.Name = "winternightComboBox";
-            this.winternightComboBox.Size = new System.Drawing.Size(115, 21);
-            this.winternightComboBox.TabIndex = 15;
-            this.winternightComboBox.SelectedIndexChanged += new System.EventHandler(this.winternightComboBox_SelectedIndexChanged);
+            this.cboWinterNightSkyColor.Location = new System.Drawing.Point(103, 169);
+            this.cboWinterNightSkyColor.Name = "cboWinterNightSkyColor";
+            this.cboWinterNightSkyColor.Size = new System.Drawing.Size(137, 21);
+            this.cboWinterNightSkyColor.TabIndex = 41;
+            this.cboWinterNightSkyColor.SelectedIndexChanged += new System.EventHandler(this.cboWinterNightSkyColor_SelectedIndexChanged);
             // 
-            // sixthreeComboBox
+            // cboSixThree
             // 
-            this.sixthreeComboBox.FormattingEnabled = true;
-            this.sixthreeComboBox.Items.AddRange(new object[] {
+            this.cboSixThree.FormattingEnabled = true;
+            this.cboSixThree.Items.AddRange(new object[] {
             "Dark Grey",
             "Dark Aqua Blue",
             "Dark Sky Blue",
@@ -979,11 +1087,11 @@
             "Gray",
             "Black",
             "Black"});
-            this.sixthreeComboBox.Location = new System.Drawing.Point(29, 194);
-            this.sixthreeComboBox.Name = "sixthreeComboBox";
-            this.sixthreeComboBox.Size = new System.Drawing.Size(119, 21);
-            this.sixthreeComboBox.TabIndex = 9;
-            this.sixthreeComboBox.SelectedIndexChanged += new System.EventHandler(this.sixthreeComboBox_SelectedIndexChanged);
+            this.cboSixThree.Location = new System.Drawing.Point(103, 194);
+            this.cboSixThree.Name = "cboSixThree";
+            this.cboSixThree.Size = new System.Drawing.Size(137, 21);
+            this.cboSixThree.TabIndex = 42;
+            this.cboSixThree.SelectedIndexChanged += new System.EventHandler(this.cboSixThree_SelectedIndexChanged);
             // 
             // label31
             // 
@@ -1003,10 +1111,10 @@
             this.label34.TabIndex = 14;
             this.label34.Text = "Winter Night Sky";
             // 
-            // winterComboBox
+            // cboWinterSkyColor
             // 
-            this.winterComboBox.FormattingEnabled = true;
-            this.winterComboBox.Items.AddRange(new object[] {
+            this.cboWinterSkyColor.FormattingEnabled = true;
+            this.cboWinterSkyColor.Items.AddRange(new object[] {
             "Dark Grey",
             "Dark Aqua Blue",
             "Dark Sky Blue",
@@ -1071,11 +1179,11 @@
             "Gray",
             "Black",
             "Black"});
-            this.winterComboBox.Location = new System.Drawing.Point(88, 145);
-            this.winterComboBox.Name = "winterComboBox";
-            this.winterComboBox.Size = new System.Drawing.Size(121, 21);
-            this.winterComboBox.TabIndex = 13;
-            this.winterComboBox.SelectedIndexChanged += new System.EventHandler(this.winterComboBox_SelectedIndexChanged);
+            this.cboWinterSkyColor.Location = new System.Drawing.Point(103, 145);
+            this.cboWinterSkyColor.Name = "cboWinterSkyColor";
+            this.cboWinterSkyColor.Size = new System.Drawing.Size(137, 21);
+            this.cboWinterSkyColor.TabIndex = 40;
+            this.cboWinterSkyColor.SelectedIndexChanged += new System.EventHandler(this.cboWinterSkyColor_SelectedIndexChanged);
             // 
             // label33
             // 
@@ -1086,10 +1194,10 @@
             this.label33.TabIndex = 12;
             this.label33.Text = "Winter Sky";
             // 
-            // nighttimeComboBox
+            // cboNighttimeSkyColor
             // 
-            this.nighttimeComboBox.FormattingEnabled = true;
-            this.nighttimeComboBox.Items.AddRange(new object[] {
+            this.cboNighttimeSkyColor.FormattingEnabled = true;
+            this.cboNighttimeSkyColor.Items.AddRange(new object[] {
             "Dark Grey",
             "Dark Aqua Blue",
             "Dark Sky Blue",
@@ -1154,25 +1262,25 @@
             "Gray",
             "Black",
             "Black"});
-            this.nighttimeComboBox.Location = new System.Drawing.Point(88, 121);
-            this.nighttimeComboBox.Name = "nighttimeComboBox";
-            this.nighttimeComboBox.Size = new System.Drawing.Size(121, 21);
-            this.nighttimeComboBox.TabIndex = 11;
-            this.nighttimeComboBox.SelectedIndexChanged += new System.EventHandler(this.nighttimeComboBox_SelectedIndexChanged);
+            this.cboNighttimeSkyColor.Location = new System.Drawing.Point(103, 121);
+            this.cboNighttimeSkyColor.Name = "cboNighttimeSkyColor";
+            this.cboNighttimeSkyColor.Size = new System.Drawing.Size(137, 21);
+            this.cboNighttimeSkyColor.TabIndex = 39;
+            this.cboNighttimeSkyColor.SelectedIndexChanged += new System.EventHandler(this.cboNighttimeSkyColor_SelectedIndexChanged);
             // 
             // label32
             // 
             this.label32.AutoSize = true;
             this.label32.Location = new System.Drawing.Point(6, 124);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(76, 13);
+            this.label32.Size = new System.Drawing.Size(72, 13);
             this.label32.TabIndex = 10;
-            this.label32.Text = "NightTime Sky";
+            this.label32.Text = "Nighttime Sky";
             // 
-            // dungeonComboBox
+            // cboDungeonSkyColor
             // 
-            this.dungeonComboBox.FormattingEnabled = true;
-            this.dungeonComboBox.Items.AddRange(new object[] {
+            this.cboDungeonSkyColor.FormattingEnabled = true;
+            this.cboDungeonSkyColor.Items.AddRange(new object[] {
             "Dark Grey",
             "Dark Aqua Blue",
             "Dark Sky Blue",
@@ -1237,11 +1345,11 @@
             "Gray",
             "Black",
             "Black"});
-            this.dungeonComboBox.Location = new System.Drawing.Point(88, 96);
-            this.dungeonComboBox.Name = "dungeonComboBox";
-            this.dungeonComboBox.Size = new System.Drawing.Size(121, 21);
-            this.dungeonComboBox.TabIndex = 7;
-            this.dungeonComboBox.SelectedIndexChanged += new System.EventHandler(this.dungeonComboBox_SelectedIndexChanged);
+            this.cboDungeonSkyColor.Location = new System.Drawing.Point(103, 96);
+            this.cboDungeonSkyColor.Name = "cboDungeonSkyColor";
+            this.cboDungeonSkyColor.Size = new System.Drawing.Size(137, 21);
+            this.cboDungeonSkyColor.TabIndex = 38;
+            this.cboDungeonSkyColor.SelectedIndexChanged += new System.EventHandler(this.cboDungeonSkyColor_SelectedIndexChanged);
             // 
             // label30
             // 
@@ -1252,10 +1360,10 @@
             this.label30.TabIndex = 6;
             this.label30.Text = "Dungeon Sky";
             // 
-            // underwaterComboBox
+            // cboUnderwaterSkyColor
             // 
-            this.underwaterComboBox.FormattingEnabled = true;
-            this.underwaterComboBox.Items.AddRange(new object[] {
+            this.cboUnderwaterSkyColor.FormattingEnabled = true;
+            this.cboUnderwaterSkyColor.Items.AddRange(new object[] {
             "Dark Grey",
             "Dark Aqua Blue",
             "Dark Sky Blue",
@@ -1320,11 +1428,11 @@
             "Gray",
             "Black",
             "Black"});
-            this.underwaterComboBox.Location = new System.Drawing.Point(88, 71);
-            this.underwaterComboBox.Name = "underwaterComboBox";
-            this.underwaterComboBox.Size = new System.Drawing.Size(121, 21);
-            this.underwaterComboBox.TabIndex = 5;
-            this.underwaterComboBox.SelectedIndexChanged += new System.EventHandler(this.underwaterComboBox_SelectedIndexChanged);
+            this.cboUnderwaterSkyColor.Location = new System.Drawing.Point(103, 71);
+            this.cboUnderwaterSkyColor.Name = "cboUnderwaterSkyColor";
+            this.cboUnderwaterSkyColor.Size = new System.Drawing.Size(137, 21);
+            this.cboUnderwaterSkyColor.TabIndex = 37;
+            this.cboUnderwaterSkyColor.SelectedIndexChanged += new System.EventHandler(this.cboUnderwaterSkyColor_SelectedIndexChanged);
             // 
             // label29
             // 
@@ -1335,10 +1443,10 @@
             this.label29.TabIndex = 4;
             this.label29.Text = "Underwater Sky";
             // 
-            // underworldComboBox
+            // cboUnderworldSkyColor
             // 
-            this.underworldComboBox.FormattingEnabled = true;
-            this.underworldComboBox.Items.AddRange(new object[] {
+            this.cboUnderworldSkyColor.FormattingEnabled = true;
+            this.cboUnderworldSkyColor.Items.AddRange(new object[] {
             "Dark Grey",
             "Dark Aqua Blue",
             "Dark Sky Blue",
@@ -1403,11 +1511,11 @@
             "Gray",
             "Black",
             "Black"});
-            this.underworldComboBox.Location = new System.Drawing.Point(88, 46);
-            this.underworldComboBox.Name = "underworldComboBox";
-            this.underworldComboBox.Size = new System.Drawing.Size(121, 21);
-            this.underworldComboBox.TabIndex = 3;
-            this.underworldComboBox.SelectedIndexChanged += new System.EventHandler(this.underworldComboBox_SelectedIndexChanged);
+            this.cboUnderworldSkyColor.Location = new System.Drawing.Point(103, 46);
+            this.cboUnderworldSkyColor.Name = "cboUnderworldSkyColor";
+            this.cboUnderworldSkyColor.Size = new System.Drawing.Size(137, 21);
+            this.cboUnderworldSkyColor.TabIndex = 36;
+            this.cboUnderworldSkyColor.SelectedIndexChanged += new System.EventHandler(this.cboUnderworldSkyColor_SelectedIndexChanged);
             // 
             // label28
             // 
@@ -1418,10 +1526,10 @@
             this.label28.TabIndex = 2;
             this.label28.Text = "Underworld Sky";
             // 
-            // comboBox1
+            // cboOverworldSkyColor
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cboOverworldSkyColor.FormattingEnabled = true;
+            this.cboOverworldSkyColor.Items.AddRange(new object[] {
             "Dark Grey",
             "Dark Aqua Blue",
             "Dark Sky Blue",
@@ -1486,11 +1594,11 @@
             "Gray",
             "Black",
             "Black"});
-            this.comboBox1.Location = new System.Drawing.Point(88, 20);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 1;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cboOverworldSkyColor.Location = new System.Drawing.Point(103, 20);
+            this.cboOverworldSkyColor.Name = "cboOverworldSkyColor";
+            this.cboOverworldSkyColor.Size = new System.Drawing.Size(137, 21);
+            this.cboOverworldSkyColor.TabIndex = 35;
+            this.cboOverworldSkyColor.SelectedIndexChanged += new System.EventHandler(this.cboOverworldSkyColor_SelectedIndexChanged);
             // 
             // label27
             // 
@@ -1501,125 +1609,24 @@
             this.label27.TabIndex = 0;
             this.label27.Text = "Overworld Sky";
             // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(6, 149);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(228, 13);
-            this.label35.TabIndex = 7;
-            this.label35.Text = "The higher the value, the faster Mario goes. (?)";
-            // 
-            // leftRunSpeed
-            // 
-            this.leftRunSpeed.Enabled = false;
-            this.leftRunSpeed.Hexadecimal = true;
-            this.leftRunSpeed.Location = new System.Drawing.Point(121, 169);
-            this.leftRunSpeed.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.leftRunSpeed.Name = "leftRunSpeed";
-            this.leftRunSpeed.Size = new System.Drawing.Size(120, 20);
-            this.leftRunSpeed.TabIndex = 9;
-            this.leftRunSpeed.ValueChanged += new System.EventHandler(this.leftRunSpeed_ValueChanged);
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(3, 171);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(108, 13);
-            this.label36.TabIndex = 8;
-            this.label36.Text = "Running Left Velocity";
-            // 
-            // runRightSpeed
-            // 
-            this.runRightSpeed.Enabled = false;
-            this.runRightSpeed.Hexadecimal = true;
-            this.runRightSpeed.Location = new System.Drawing.Point(121, 195);
-            this.runRightSpeed.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.runRightSpeed.Name = "runRightSpeed";
-            this.runRightSpeed.Size = new System.Drawing.Size(120, 20);
-            this.runRightSpeed.TabIndex = 11;
-            this.runRightSpeed.ValueChanged += new System.EventHandler(this.runRightSpeed_ValueChanged);
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(3, 197);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(115, 13);
-            this.label37.TabIndex = 10;
-            this.label37.Text = "Running Right Velocity";
-            // 
-            // walkRightSpeed
-            // 
-            this.walkRightSpeed.Enabled = false;
-            this.walkRightSpeed.Hexadecimal = true;
-            this.walkRightSpeed.Location = new System.Drawing.Point(121, 247);
-            this.walkRightSpeed.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.walkRightSpeed.Name = "walkRightSpeed";
-            this.walkRightSpeed.Size = new System.Drawing.Size(120, 20);
-            this.walkRightSpeed.TabIndex = 15;
-            this.walkRightSpeed.ValueChanged += new System.EventHandler(this.walkRightSpeed_ValueChanged);
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(3, 249);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(114, 13);
-            this.label38.TabIndex = 14;
-            this.label38.Text = "Walking Right Velocity";
-            // 
-            // walkLeftSpeed
-            // 
-            this.walkLeftSpeed.Enabled = false;
-            this.walkLeftSpeed.Hexadecimal = true;
-            this.walkLeftSpeed.Location = new System.Drawing.Point(121, 221);
-            this.walkLeftSpeed.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.walkLeftSpeed.Name = "walkLeftSpeed";
-            this.walkLeftSpeed.Size = new System.Drawing.Size(120, 20);
-            this.walkLeftSpeed.TabIndex = 13;
-            this.walkLeftSpeed.ValueChanged += new System.EventHandler(this.walkLeftSpeed_ValueChanged);
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(3, 223);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(107, 13);
-            this.label39.TabIndex = 12;
-            this.label39.Text = "Walking Left Velocity";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(498, 507);
+            this.ClientSize = new System.Drawing.Size(420, 599);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.saveButton);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.openButton);
             this.Name = "Form1";
             this.Padding = new System.Windows.Forms.Padding(3);
             this.Text = "superFlower";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.walkRightSpeed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.walkLeftSpeed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.runRightSpeed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.leftRunSpeed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.runningJumpHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.walkingJumpHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.standingJumpHeight)).EndInit();
@@ -1632,17 +1639,13 @@
             this.tabPage4.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.leftRunSpeed)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.runRightSpeed)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.walkRightSpeed)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.walkLeftSpeed)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button openButton;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
@@ -1703,21 +1706,21 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboOverworldSkyColor;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.ComboBox winternightComboBox;
-        private System.Windows.Forms.ComboBox sixthreeComboBox;
+        private System.Windows.Forms.ComboBox cboWinterNightSkyColor;
+        private System.Windows.Forms.ComboBox cboSixThree;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.ComboBox winterComboBox;
+        private System.Windows.Forms.ComboBox cboWinterSkyColor;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.ComboBox nighttimeComboBox;
+        private System.Windows.Forms.ComboBox cboNighttimeSkyColor;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.ComboBox dungeonComboBox;
+        private System.Windows.Forms.ComboBox cboDungeonSkyColor;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.ComboBox underwaterComboBox;
+        private System.Windows.Forms.ComboBox cboUnderwaterSkyColor;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.ComboBox underworldComboBox;
+        private System.Windows.Forms.ComboBox cboUnderworldSkyColor;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.CheckBox hardmodeCheckBox;
         private System.Windows.Forms.NumericUpDown runRightSpeed;
